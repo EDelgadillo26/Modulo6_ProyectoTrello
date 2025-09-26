@@ -13,8 +13,8 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  /* Global setup for authentication - only runs when needed */
-  globalSetup: require.resolve('./tests/global-setup.ts'),
+  /* Global setup for authentication - moved to utils */
+  globalSetup: require.resolve('./utils/global-setup.ts'),
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */

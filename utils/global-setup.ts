@@ -1,5 +1,5 @@
 import { chromium, FullConfig } from '@playwright/test';
-import { AuthHelper } from '../utils/auth';
+import { AuthHelper } from './auth';
 
 async function globalSetup(config: FullConfig) {
   console.log('🚀 Starting global setup...');
