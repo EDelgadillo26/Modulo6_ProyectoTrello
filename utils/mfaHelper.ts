@@ -15,15 +15,19 @@ export class MfaHelper {
       throw new Error('MFA secret not found in app-config.json');
     }
 
-    const token = speakeasy.totp({
-      secret: appConfig.trello.mfa,
-      encoding: 'base32',
-      digits: 6,
-      step: 30,
-      window: 1
-    });
+    try {
+      const token = speakeasy.totp({
+        secret: appConfig.trello.mfa,
+        encoding: 'base32',
+        digits: 6,
+        step: 30
+        // window se usa solo para verificación, no para generación
+      });
 
-    return token;
+      return token;
+    } catch (error) {
+      throw new Error(`Failed to generate MFA code: ${error}`);
+    }
   }
 
   /**
