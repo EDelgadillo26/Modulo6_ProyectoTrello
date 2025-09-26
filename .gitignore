@@ -1,0 +1,19 @@
+
+# Environment variables (CRITICAL - Contains credentials)
+.env
+.env.local
+.env.*.local
+
+# Configuration files with credentials
+app-config.json
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+auth-state.json
+
+# Extras
+.DS_Store
