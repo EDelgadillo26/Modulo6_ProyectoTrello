@@ -47,6 +47,7 @@ export class DashboardPage {
   }
 
   async validateVisibilityOfBoard(boardName: string, shouldBeVisible: boolean): Promise<void> {
+    await this.page.waitForSelector(`h3.xtkiiaSp5ulDJM:has-text("YOUR WORKSPACES") ~ * .JeWt7esCgw4_73 a[title="${boardName}"][aria-label="${boardName}"]`, { state: shouldBeVisible ? 'visible' : 'hidden' });
     const isBoardVisible = await this.page.locator(`h3.xtkiiaSp5ulDJM:has-text("YOUR WORKSPACES") ~ * .JeWt7esCgw4_73 a[title="${boardName}"][aria-label="${boardName}"]`).first().isVisible();
     expect(isBoardVisible).toBe(shouldBeVisible);
   }
@@ -58,6 +59,7 @@ export class DashboardPage {
 
   // Method to check if board is visible (without assertions)
   async isBoardVisible(boardName: string): Promise<boolean> {
+    await this.page.waitForSelector(`h3.xtkiiaSp5ulDJM:has-text("YOUR WORKSPACES") ~ * .JeWt7esCgw4_73 a[title="${boardName}"][aria-label="${boardName}"]`, { state: 'visible' });
     return await this.page.locator(`h3.xtkiiaSp5ulDJM:has-text("YOUR WORKSPACES") ~ * .JeWt7esCgw4_73 a[title="${boardName}"][aria-label="${boardName}"]`).first().isVisible();
   }
 }
