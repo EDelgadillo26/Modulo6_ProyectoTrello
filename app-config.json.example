@@ -1,8 +1,0 @@
-{
-  "trello": {
-    "email": "",
-    "password": "",
-    "baseUrl": "https://trello.com",
-    "mfa": ""
-  }
-}
