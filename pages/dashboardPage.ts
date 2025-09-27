@@ -40,10 +40,9 @@ export class DashboardPage {
   }
 
   async deleteClosedBoard() {
-  await this.page.getByRole('button', { name: 'View all closed boards' }).click();
-  await this.page.getByTestId('close-board-delete-board-button').click();
-  await this.page.getByTestId('close-board-delete-board-confirm-button').click();
-
+    await this.page.getByRole('button', { name: 'View all closed boards' }).click();
+    await this.page.getByTestId('close-board-delete-board-button').first().click();
+    await this.page.getByTestId('close-board-delete-board-confirm-button').click();
   }
 
   async validateVisibilityOfBoard(boardName: string, shouldBeVisible: boolean): Promise<void> {
@@ -59,7 +58,16 @@ export class DashboardPage {
 
   // Method to check if board is visible (without assertions)
   async isBoardVisible(boardName: string): Promise<boolean> {
-    await this.page.waitForSelector(`h3.xtkiiaSp5ulDJM:has-text("YOUR WORKSPACES") ~ * .JeWt7esCgw4_73 a[title="${boardName}"][aria-label="${boardName}"]`, { state: 'visible' });
-    return await this.page.locator(`h3.xtkiiaSp5ulDJM:has-text("YOUR WORKSPACES") ~ * .JeWt7esCgw4_73 a[title="${boardName}"][aria-label="${boardName}"]`).first().isVisible();
+    try {
+      // Use a timeout to avoid waiting too long if element doesn't exist
+      await this.page.waitForSelector(`h3.xtkiiaSp5ulDJM:has-text("YOUR WORKSPACES") ~ * .JeWt7esCgw4_73 a[title="${boardName}"][aria-label="${boardName}"]`, { 
+        state: 'visible', 
+        timeout: 5000 
+      });
+      return await this.page.locator(`h3.xtkiiaSp5ulDJM:has-text("YOUR WORKSPACES") ~ * .JeWt7esCgw4_73 a[title="${boardName}"][aria-label="${boardName}"]`).first().isVisible();
+    } catch (error) {
+      // If element is not found or not visible within timeout, return false
+      return false;
+    }
   }
 }
