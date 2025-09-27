@@ -8,6 +8,10 @@
     "test:headed": "npx playwright test --headed",
     "test:debug": "npx playwright test --debug",
     "test:ui": "npx playwright test --ui",
+    "test:login": "npx playwright test --project=login-tests",
+    "test:auth": "npx playwright test --project=authenticated-tests",
+    "test:ui-only": "npx playwright test tests/test_UI/",
+    "test:api-only": "npx playwright test tests/test_API/",
     "report": "npx playwright show-report",
     "postinstall": "npx playwright install --with-deps"
   },

@@ -1,5 +1,5 @@
 import { test, expect} from "@playwright/test";
-import { DashboardPage } from "../pages/dashboardPage";
+import { DashboardPage } from "../../pages/dashboardPage";
 import { TIMEOUT } from "dns";
 
 test.describe("Test Cases Dashboard", () => {
