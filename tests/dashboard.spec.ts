@@ -12,6 +12,10 @@ test.describe("Test Cases Dashboard", () => {
     });
 
     test.afterEach(async ({ page }) => {
+        if (createdBoards.length === 0) {
+    console.log('🚀 No boards to clean up - skipping cleanup');
+    return; // ⚡ Sale inmediatamente si no hay nada que limpiar
+}
         // Cleanup: Delete any boards created during the test
         for (const boardName of createdBoards) {
             try {
@@ -46,6 +50,17 @@ test.describe("Test Cases Dashboard", () => {
         createdBoards = [];
     });
 
+    test('should create a new board', async ({ page }) => {
+        const boardName = "New Board";
+        createdBoards.push(boardName);
+        
+        await dashboardPage.createNewBoard(boardName);
+        await dashboardPage.backBoardToDashboard();
+        await page.reload(); 
+        await dashboardPage.validateVisibilityOfBoard(boardName, true);
+        
+    });
+
     test('should close a board', async ({ page }) => {
         const boardName = "Board to Close";
         createdBoards.push(boardName);
@@ -64,14 +79,5 @@ test.describe("Test Cases Dashboard", () => {
         await dashboardPage.validateVisibilityOfBoard(boardName, false);
     });
         
-    test.only('should create a new board', async ({ page }) => {
-        const boardName = "New Board";
-        createdBoards.push(boardName);
-        
-        await dashboardPage.createNewBoard(boardName);
-        await dashboardPage.backBoardToDashboard();
-        await page.reload(); 
-        await dashboardPage.validateVisibilityOfBoard(boardName, true);
-        
-    });
+
 });
