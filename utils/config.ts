@@ -9,10 +9,8 @@ export const config = {
   urls: {
     base: appConfig.trello.baseUrl,
     login: `${appConfig.trello.baseUrl}/login`,
-    dashboard: `${appConfig.trello.baseUrl}#/dashboard`,
-    clients: `${appConfig.trello.baseUrl}#/clients`,
-    products: `${appConfig.trello.baseUrl}#/products`,
-    config: `${appConfig.trello.baseUrl}#/settings/import_export`
+    dashboard: `${appConfig.trello.baseUrl}/u/pabloenriquedelgadillofernandez2/boards`,
+    
   },
 
   // Credenciales de usuario para testing
@@ -33,7 +31,7 @@ export const config = {
   }
 };
 
-// Validar que las variables críticas están definidas
+// Validar que las variables críticas están definidas //////Aumentar el MFA//////
 export const validateConfig = () => {
   const requiredVars = [
     { key: 'email', value: config.user.email },
