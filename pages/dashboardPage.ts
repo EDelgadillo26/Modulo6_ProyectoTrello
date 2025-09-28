@@ -45,8 +45,11 @@ export class DashboardPage {
   }
 
   async createNewBoard(boardName: string) {
+    await this.page.getByTestId(this.headerCreateMenuButton).waitFor({ state: 'visible', timeout: 10000 });
     await this.page.getByTestId(this.headerCreateMenuButton).click();
+    await this.page.getByTestId(this.headerCreateBoardButton).waitFor({ state: 'visible', timeout: 10000 });
     await this.page.getByTestId(this.headerCreateBoardButton).click();
+    await this.page.getByTestId(this.createBoardTitleInput).waitFor({ state: 'visible', timeout: 10000 });
     await this.page.getByTestId(this.createBoardTitleInput).click();
     await this.page.getByTestId(this.createBoardTitleInput).fill(boardName);
     await this.page.getByTestId(this.createBoardSubmitButton).click();
