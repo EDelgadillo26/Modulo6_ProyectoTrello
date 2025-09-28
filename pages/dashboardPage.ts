@@ -4,8 +4,29 @@ import { config } from "../utils/config";
 export class DashboardPage {
   private page: Page;
   
-  // Selector complejo para boards en YOUR WORKSPACES (el más importante para refactorizar)
+  // ========== SELECTORES DEFINIDOS ==========
+  
+  // Selectores para boards en workspaces
   private readonly yourWorkspacesBoardSelector = 'h3.xtkiiaSp5ulDJM:has-text("YOUR WORKSPACES") ~ * .JeWt7esCgw4_73';
+  
+  // Selectores para creación de boards
+  private readonly headerCreateMenuButton = 'header-create-menu-button';
+  private readonly headerCreateBoardButton = 'header-create-board-button';
+  private readonly createBoardTitleInput = 'create-board-title-input';
+  private readonly createBoardSubmitButton = 'create-board-submit-button';
+  
+  // Selectores para menú de boards
+  private readonly showMenuButtonName = 'Show menu';
+  private readonly closeBoardButtonName = 'Close board Close board';
+  private readonly closeBoardConfirmButton = 'popover-close-board-confirm';
+  
+  // Selectores para eliminar boards
+  private readonly deleteBoardButton = 'close-board-delete-board-button';
+  private readonly deleteBoardConfirmButton = 'close-board-delete-board-confirm-button';
+  private readonly viewAllClosedBoardsButtonName = 'View all closed boards';
+  
+  // Selectores para navegación
+  private readonly backToHomeLinkName = 'Back to home';
 
   constructor(page: Page) {
     this.page = page;
@@ -26,11 +47,11 @@ export class DashboardPage {
   }
 
   async createNewBoard(boardName: string) {
-    await this.page.getByTestId('header-create-menu-button').click();
-    await this.page.getByTestId('header-create-board-button').click();
-    await this.page.getByTestId('create-board-title-input').click();
-    await this.page.getByTestId('create-board-title-input').fill(boardName);
-    await this.page.getByTestId('create-board-submit-button').click();
+    await this.page.getByTestId(this.headerCreateMenuButton).click();
+    await this.page.getByTestId(this.headerCreateBoardButton).click();
+    await this.page.getByTestId(this.createBoardTitleInput).click();
+    await this.page.getByTestId(this.createBoardTitleInput).fill(boardName);
+    await this.page.getByTestId(this.createBoardSubmitButton).click();
   } 
 
   async openDashboard(boardName: string) {
@@ -39,25 +60,25 @@ export class DashboardPage {
 
   // Archive board
   async closeBoard() {
-    await this.page.getByRole('button', { name: 'Show menu' }).click();
-    await this.page.getByRole('button', { name: 'Close board Close board' }).click();
-    await this.page.getByTestId('popover-close-board-confirm').click();
+    await this.page.getByRole('button', { name: this.showMenuButtonName }).click();
+    await this.page.getByRole('button', { name: this.closeBoardButtonName }).click();
+    await this.page.getByTestId(this.closeBoardConfirmButton).click();
   }
 
   // Archive and delete board
   async deleteBoard() {
-    await this.page.getByRole('button', { name: 'Show menu' }).click();
-    await this.page.getByRole('button', { name: 'Close board Close board' }).click();
-    await this.page.getByTestId('popover-close-board-confirm').click();
-    await this.page.getByRole('button', { name: 'Show menu' }).click();
-    await this.page.getByTestId('close-board-delete-board-button').click();
-    await this.page.getByTestId('close-board-delete-board-confirm-button').click();
+    await this.page.getByRole('button', { name: this.showMenuButtonName }).click();
+    await this.page.getByRole('button', { name: this.closeBoardButtonName }).click();
+    await this.page.getByTestId(this.closeBoardConfirmButton).click();
+    await this.page.getByRole('button', { name: this.showMenuButtonName }).click();
+    await this.page.getByTestId(this.deleteBoardButton).click();
+    await this.page.getByTestId(this.deleteBoardConfirmButton).click();
   }
 
   async deleteClosedBoard() {
-    await this.page.getByRole('button', { name: 'View all closed boards' }).click();
-    await this.page.getByTestId('close-board-delete-board-button').first().click();
-    await this.page.getByTestId('close-board-delete-board-confirm-button').click();
+    await this.page.getByRole('button', { name: this.viewAllClosedBoardsButtonName }).click();
+    await this.page.getByTestId(this.deleteBoardButton).first().click();
+    await this.page.getByTestId(this.deleteBoardConfirmButton).click();
   }
 
   async validateVisibilityOfBoard(boardName: string, shouldBeVisible: boolean): Promise<void> {
@@ -68,7 +89,7 @@ export class DashboardPage {
   }
 
   async backBoardToDashboard() {
-    await this.page.getByRole('link', { name: 'Back to home' }).click();
+    await this.page.getByRole('link', { name: this.backToHomeLinkName }).click();
   }
 
   // Method to check if board is visible (without assertions)
