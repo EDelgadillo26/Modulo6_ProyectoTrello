@@ -1,5 +1,4 @@
 import { faker } from '@faker-js/faker';
-import { FileGenerator } from './fileGenerator';
 
 /**
  * Helper class para generar datos aleatorios específicos para Trello
@@ -121,42 +120,6 @@ export class TrelloDataGenerator {
   static generateUsername(): string {
     return faker.internet.username();
   }
-
-  /**
-   * Genera un archivo para subir a una tarjeta
-   */
-  static generateFileForCard(fileType?: 'image' | 'text' | 'json' | 'csv'): string {
-    if (fileType) {
-      switch (fileType) {
-        case 'image':
-          return FileGenerator.generateSimpleImage();
-        case 'text':
-          return FileGenerator.generateTextFile();
-        case 'json':
-          return FileGenerator.generateJsonFile();
-        case 'csv':
-          return FileGenerator.generateCsvFile();
-      }
-    }
-    
-    return FileGenerator.generateRandomFile();
-  }
-
-  /**
-   * Genera nombres de archivos realistas
-   */
-  static generateFileName(extension?: string): string {
-    const ext = extension || faker.helpers.arrayElement(['pdf', 'docx', 'xlsx', 'png', 'jpg', 'txt', 'csv']);
-    const baseName = faker.helpers.arrayElement([
-      faker.company.buzzNoun(),
-      faker.hacker.noun(),
-      `${faker.word.adjective()}_${faker.word.noun()}`,
-      `report_${faker.date.recent().getMonth() + 1}`,
-      `${faker.person.lastName()}_document`
-    ]);
-    
-    return `${baseName}.${ext}`;
-  }
 }
 
 // Export individual functions for easier use
@@ -169,7 +132,5 @@ export const {
   generateLabelName,
   generateCompleteCardData,
   generateDueDate,
-  generateUsername,
-  generateFileForCard,
-  generateFileName
+  generateUsername
 } = TrelloDataGenerator;
