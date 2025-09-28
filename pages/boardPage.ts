@@ -2,7 +2,7 @@ import { Page, Locator, expect } from "@playwright/test";
 import { config } from "../utils/config";
 import { TrelloDataGenerator } from "../utils/trelloDataGenerator";
 
-export class DashboardPage {
+export class BoardPage {
   private page: Page;
   
 
@@ -75,21 +75,19 @@ export class DashboardPage {
   await this.page.getByTestId('due-reminder-select-select--dropdown-indicator').click();
   await this.page.getByTestId('due-reminder-select-select--option-7').getByText('Day before').click();
   await this.page.getByTestId('save-date-button').click();
-  await this.page.getByRole('button', { name: 'Close dialog' }).click();
   }
 
   async addCardChecklist(cardName: string){
-
-  await this.page.getByTestId('lists').locator('div').filter({ hasText: cardName }).nth(3).click();
+  await this.page.getByRole('link', { name: cardName }).click();
   await this.page.getByTestId('card-back-add-to-card-button').click();
   await this.page.getByTestId('card-back-checklist-button').click();
   await this.page.getByTestId('checklist-add-button').click();
-  await this.page.getByTestId('check-item-name-input').fill(cardName);
+  await this.page.getByTestId('check-item-name-input').click();
+  await this.page.getByTestId('check-item-name-input').fill('TEST1');
   await this.page.getByTestId('check-item-add-button').click();
-  await this.page.getByTestId('check-item-name-input').fill(cardName);
+  await this.page.getByTestId('check-item-name-input').fill('TEST2');
   await this.page.getByTestId('check-item-add-button').click();
-  await this.page.getByRole('listitem').filter({ hasText: cardName }).getByTestId('clickable-checkbox').locator('svg').click();
-  await this.page.getByRole('button', { name: 'Close dialog' }).click();
+  await this.page.getByRole('listitem').filter({ hasText: 'TEST1' }).getByTestId('clickable-checkbox').locator('svg').click();
   }
 
   async addCardFilesImage(cardName: string){
@@ -134,6 +132,14 @@ export class DashboardPage {
 
   async validateUploadedFile(){
     expect(this.page.getByRole('heading', { name: 'Files' })).toBeVisible();
+    await this.page.getByRole('button', { name: 'Close dialog' }).click();
+  }
+    async validateCardDate(){
+    expect(this.page.getByRole('heading', { name: 'Dates' })).toBeVisible();
+    await this.page.getByRole('button', { name: 'Close dialog' }).click();
+  }
+    async validateCardChecklist(){
+    expect(this.page.getByTestId('checklist-title')).toBeVisible();
     await this.page.getByRole('button', { name: 'Close dialog' }).click();
   }
 }

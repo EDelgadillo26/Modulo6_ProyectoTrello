@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { TrelloDataGenerator } from "../../utils/trelloDataGenerator";
 import { DashboardPage } from "../../pages/dashboardPage";
-import { DashboardPage as BoardPage } from "../../pages/boardPage";
+import { BoardPage } from "../../pages/boardPage";
 
 test.describe("Test For Board", () => {
   let dashboardPage: DashboardPage;
@@ -59,5 +59,65 @@ test.describe("Test For Board", () => {
       });
     });
   });
+
+    test('Create board and add card with especific date', async ({ page }) => {
+        const boardName = TrelloDataGenerator.generateBoardName();
+      const cardName = TrelloDataGenerator.generateCardName();
+      
+      await test.step("Create board", async () => {
+        await dashboardPage.createNewBoard(boardName);
+        await page.waitForTimeout(3000);
+      });
+
+      const boardPage = new BoardPage(page);
+
+      await test.step('Create lists and card', async () => {
+        await boardPage.createList(cardName);
+        await boardPage.createCard(cardName);
+      });
+
+      await test.step('Add specific date to card', async () => {
+        await boardPage.addCardDate(cardName);
+      });
+      
+
+      await test.step('Validate Card Date', async () => {
+        await boardPage.validateCardDate();
+      });
+
+      await test.step('Cleanup board', async () => {
+        await dashboardPage.deleteBoard();
+      });
+    });
+
+    test.only('Create board and add card with checklist', async ({ page }) => {
+        const boardName = TrelloDataGenerator.generateBoardName();
+      const cardName = TrelloDataGenerator.generateCardName();
+      
+      await test.step("Create board", async () => {
+        await dashboardPage.createNewBoard(boardName);
+        await page.waitForTimeout(3000);
+      });
+
+      const boardPage = new BoardPage(page);
+
+      await test.step('Create lists and card', async () => {
+        await boardPage.createList(cardName);
+        await boardPage.createCard(cardName);
+      });
+
+      await test.step('Add checklist to card', async () => {
+        await boardPage.addCardChecklist(cardName);
+      });
+
+      await test.step('Validate Card Checklist', async () => {
+        await boardPage.validateCardChecklist();
+      });
+
+      await test.step('Cleanup board', async () => {
+        await dashboardPage.deleteBoard();
+      });
+    });
+
 
 });
