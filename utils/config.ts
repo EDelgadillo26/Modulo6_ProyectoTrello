@@ -9,8 +9,8 @@ export const config = {
   urls: {
     base: appConfig.trello.baseUrl,
     login: `${appConfig.trello.baseUrl}/login`,
-    dashboard: `${appConfig.trello.baseUrl}/u/201705942/boards`,
-    
+    dashboard: `${appConfig.trello.baseUrl}/`,
+    //dashboard: `${appConfig.trello.baseUrl}/u/201705942/boards`,
   },
 
   // Credenciales de usuario para testing
