@@ -11,6 +11,10 @@ test.describe("Board Creation Tests", () => {
     await dashboardPage.gotoDashboard();
   });
 
+  test.afterEach(async ({ page }) => {
+    await dashboardPage.deleteBoard();
+  });
+
   test('Create board with lists and basic card', async ({ page }) => {
     test.setTimeout(60000);
 
@@ -34,10 +38,6 @@ test.describe("Board Creation Tests", () => {
 
     await test.step('Validate card was created', async () => {
       await expect(page.getByRole('link', { name: cardName })).toBeVisible();
-    });
-
-    await test.step('Cleanup board', async () => {
-      await dashboardPage.deleteBoard();
     });
   });
 
@@ -78,8 +78,5 @@ test.describe("Board Creation Tests", () => {
       await expect(page.getByRole('link', { name: cardName3 })).toBeVisible();
     });
 
-    await test.step('Cleanup board', async () => {
-      await dashboardPage.deleteBoard();
-    });
   });
 });
