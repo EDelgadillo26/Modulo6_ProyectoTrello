@@ -75,4 +75,46 @@ export class BoardPage {
     await this.page.getByTestId('card-back-labels-button').click();
     await this.page.locator('.ZAcH7Pr9TT7uUR > svg').first().click();
   }
+
+  async moveCardToDoing(cardName: string){
+    await this.page.getByRole('link', { name: cardName }).click();
+    await this.page.waitForTimeout(1000);
+    await this.page.getByTestId('card-back-name').getByRole('button', { name: 'To Do' }).click();
+    await this.page.getByTestId('move-card-popover-select-list-destination-select--input-container').click();
+    await this.page.getByTestId('move-card-popover-select-list-destination-select--option-1').getByText('In Progress').click();
+    await this.page.getByTestId('move-card-popover-move-button').click();
+    await this.page.getByRole('button', { name: 'Close dialog' }).click();
+  }
+
+  async moveCardToDone(cardName: string){
+    await this.page.getByRole('link', { name: cardName }).click();
+    await this.page.waitForTimeout(1000);
+    await this.page.getByTestId('card-back-name').getByRole('button', { name: 'In Progress' }).click();
+    await this.page.getByTestId('move-card-popover-select-list-destination-select--input-container').click();
+    await this.page.getByTestId('move-card-popover-select-list-destination-select--option-2').getByText('Done').click();
+    await this.page.getByTestId('move-card-popover-move-button').click();
+    await this.page.getByRole('button', { name: 'Close dialog' }).click();
+  }
+
+  async archiveCard(cardName: string){
+    await this.page.getByRole('link', { name: cardName }).click();
+    await this.page.getByTestId('card-back-actions-button').click();
+    await this.page.getByTestId('card-back-archive-button').click();
+    await this.page.getByRole('button', { name: 'Close dialog' }).click();
+
+  }
+
+  async deleteCard(cardName: string){
+    await this.page.getByRole('link', { name: cardName }).click();
+    await this.page.getByTestId('card-back-actions-button').click();
+    await this.page.getByTestId('card-back-archive-button').click();
+    await this.page.getByTestId('card-back-delete-card-button').click();
+    await this.page.getByTestId('popover-confirm-button').click();
+  }
+
+  async validateCardInNotVisible(cardName: string){
+    // Verificar que la card no esté visible en el board después del archive
+    const cardLocator = this.page.getByRole('link', { name: cardName });
+    await expect(cardLocator).not.toBeVisible();
+  }
 }
