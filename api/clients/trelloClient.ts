@@ -1,24 +1,12 @@
-import { APIRequestContext } from '@playwright/test';
+import axios from 'axios';
+import { TRELLO_API_KEY, TRELLO_TOKEN } from '../../config/api.config';
 
-export class TrelloClient {
-  constructor(private request: APIRequestContext) {}
+const trelloApi = axios.create({
+  baseURL: 'https://api.trello.com/1',
+  params: {
+    key: TRELLO_API_KEY,
+    token: TRELLO_TOKEN,
+  },
+});
 
-  protected async get(endpoint: string, params: any = {}) {
-    return this.request.get(endpoint, {
-      params: { ...params, key: process.env.TRELLO_KEY, token: process.env.TRELLO_TOKEN }
-    });
-  }
-
-  protected async post(endpoint: string, data: any = {}) {
-    return this.request.post(endpoint, {
-      params: { key: process.env.TRELLO_KEY ?? '', token: process.env.TRELLO_TOKEN ?? '' },
-      data
-    });
-  }
-
-  protected async delete(endpoint: string, params: any = {}) {
-    return this.request.delete(endpoint, {
-      params: { ...params, key: process.env.TRELLO_KEY, token: process.env.TRELLO_TOKEN }
-    });
-  }
-}
+export default trelloApi;
