@@ -92,7 +92,7 @@ export class DashboardPage {
   await this.page.getByRole('button', { name: 'Close dialog' }).click();
   }
 
-  async addCardFiles(cardName: string){
+  async addCardFilesImage(cardName: string){
   // Usar un selector más genérico para encontrar la tarjeta
   await this.page.getByRole('link', { name: cardName }).click();
   await this.page.waitForTimeout(2000); // Esperar a que se abra la tarjeta
@@ -104,19 +104,36 @@ export class DashboardPage {
   await this.page.waitForTimeout(1000); // Esperar a que se abra el diálogo
   
   // Usar el input file directamente
-  console.log(`📎 Uploading existing file: data/ImageTest.jpeg`);
   await this.page.locator('input[type="file"]').setInputFiles('./data/ImageTest.jpeg');
   
   // Reducir timeout y usar waitForSelector para confirmar subida
-  console.log(`📎 Waiting for file upload to complete...`);
+  await this.page.waitForTimeout(2000); // Reducir de 5000 a 2000
+  
+  console.log(`✅ File uploaded successfully!`);
+  }
+
+  async addCardFilesJson(cardName: string){
+  // Usar un selector más genérico para encontrar la tarjeta
+  await this.page.getByRole('link', { name: cardName }).click();
+  await this.page.waitForTimeout(2000); // Esperar a que se abra la tarjeta
+  
+  await this.page.getByTestId('card-back-add-to-card-button').click();
+  await this.page.waitForTimeout(1000); // Esperar a que se abra el menú
+  
+  await this.page.getByTestId('card-back-attachment-button').click();
+  await this.page.waitForTimeout(1000); // Esperar a que se abra el diálogo
+  
+  // Usar el input file directamente
+  await this.page.locator('input[type="file"]').setInputFiles('./data/users.json');
+  
+  // Reducir timeout y usar waitForSelector para confirmar subida
   await this.page.waitForTimeout(2000); // Reducir de 5000 a 2000
   
   console.log(`✅ File uploaded successfully!`);
   }
 
   async validateUploadedFile(){
-    expect(this.page.getByRole('button', { name: 'ImageTest.jpeg ImageTest.jpeg' })).toBeVisible();
+    expect(this.page.getByRole('heading', { name: 'Files' })).toBeVisible();
     await this.page.getByRole('button', { name: 'Close dialog' }).click();
   }
-
 }
