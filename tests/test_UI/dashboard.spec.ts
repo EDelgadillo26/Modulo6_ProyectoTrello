@@ -1,6 +1,6 @@
 import { test, expect} from "@playwright/test";
 import { DashboardPage } from "../../pages/dashboardPage";
-import { TIMEOUT } from "dns";
+import { TrelloDataGenerator } from "../../utils/trelloDataGenerator";
 
 test.describe("Test Cases Dashboard", () => {
     let dashboardPage: DashboardPage;
@@ -64,7 +64,7 @@ test.describe("Test Cases Dashboard", () => {
     });
 
     test('should create a new board', async ({ page }) => {
-        const boardName = "New Board";
+        const boardName = TrelloDataGenerator.generateBoardName();
         createdBoards.push(boardName);
         
         await dashboardPage.createNewBoard(boardName);
@@ -76,7 +76,7 @@ test.describe("Test Cases Dashboard", () => {
     });
 
     test('should close a board', async ({ page }) => {
-        const boardName = "Board to Close";
+        const boardName = TrelloDataGenerator.generateBoardName();
         createdBoards.push(boardName);
         
         await dashboardPage.createNewBoard(boardName);
@@ -90,7 +90,7 @@ test.describe("Test Cases Dashboard", () => {
     });
 
     test('should delete a board', async ({ page }) => {
-        const boardName = "Board to Delete";
+        const boardName = TrelloDataGenerator.generateBoardName();
         createdBoards.push(boardName); // Agregamos el board a la lista por si falla
         
         await dashboardPage.createNewBoard(boardName);

@@ -32,12 +32,10 @@ export class DashboardPage {
     this.page = page;
   }
 
-  // Helper method to get board selector by name in YOUR WORKSPACES
   private getBoardInWorkspacesSelector(boardName: string): string {
     return `${this.yourWorkspacesBoardSelector} a[title="${boardName}"][aria-label="${boardName}"]`;
   }
 
-  // Helper method to get board link selector by name (generic)
   private getBoardLinkSelector(boardName: string): string {
     return `a[title="${boardName}"]`;
   }
@@ -58,7 +56,6 @@ export class DashboardPage {
     await this.page.locator(this.getBoardLinkSelector(boardName)).first().click();
   }
 
-  // Archive board
   async closeBoard() {
     await this.page.getByRole('button', { name: this.showMenuButtonName }).click();
     await this.page.getByRole('button', { name: this.closeBoardButtonName }).click();
@@ -92,18 +89,15 @@ export class DashboardPage {
     await this.page.getByRole('link', { name: this.backToHomeLinkName }).click();
   }
 
-  // Method to check if board is visible (without assertions)
   async isBoardVisible(boardName: string): Promise<boolean> {
     try {
       const boardSelector = this.getBoardInWorkspacesSelector(boardName);
-      // Use a timeout to avoid waiting too long if element doesn't exist
       await this.page.waitForSelector(boardSelector, { 
         state: 'visible', 
         timeout: 5000 
       });
       return await this.page.locator(boardSelector).first().isVisible();
     } catch (error) {
-      // If element is not found or not visible within timeout, return false
       return false;
     }
   }
