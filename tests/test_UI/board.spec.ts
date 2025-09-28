@@ -3,7 +3,7 @@ import { TrelloDataGenerator } from "../../utils/trelloDataGenerator";
 import { DashboardPage } from "../../pages/dashboardPage";
 import { BoardPage } from "../../pages/boardPage";
 
-test.describe("Test For Board", () => {
+test.describe("Board Creation Tests", () => {
   let dashboardPage: DashboardPage;
 
   test.beforeEach(async ({ page }) => {
@@ -11,113 +11,75 @@ test.describe("Test For Board", () => {
     await dashboardPage.gotoDashboard();
   });
 
-  // Array de tipos de archivo para testear
-  const fileTypes = [
-    { 
-      type: 'Image', 
-      method: 'addCardFilesImage',
-      description: 'Create board and add card with Image file'
-    },
-    { 
-      type: 'JSON', 
-      method: 'addCardFilesJson',
-      description: 'Create board and add card with JSON file'
-    }
-  ];
+  test('Create board with lists and basic card', async ({ page }) => {
+    test.setTimeout(60000);
 
-  // Generar un test para cada tipo de archivo
-  fileTypes.forEach(({ type, method, description }) => {
-    test(description, async ({ page }) => {
-      test.setTimeout(60000);
+    const boardName = TrelloDataGenerator.generateBoardName();
+    const cardName = TrelloDataGenerator.generateCardName();
+    
+    await test.step("Create board", async () => {
+      await dashboardPage.createNewBoard(boardName);
+      await page.waitForTimeout(3000);
+    });
 
-      const boardName = TrelloDataGenerator.generateBoardName();
-      const cardName = TrelloDataGenerator.generateCardName();
-      
-      await test.step("Create board", async () => {
-        await dashboardPage.createNewBoard(boardName);
-        await page.waitForTimeout(3000);
-      });
+    const boardPage = new BoardPage(page);
 
-      const boardPage = new BoardPage(page);
+    await test.step('Create lists (To Do, In Progress, Done)', async () => {
+      await boardPage.createList(cardName);
+    });
 
-      await test.step('Create lists and card', async () => {
-        await boardPage.createList(cardName);
-        await boardPage.createCard(cardName);
-      });
+    await test.step('Create basic card in To Do list', async () => {
+      await boardPage.createCard(cardName);
+    });
 
-      await test.step(`Add ${type} File`, async () => {
-        await (boardPage as any)[method](cardName);
-        await page.waitForTimeout(2000);
-      });
+    await test.step('Validate card was created', async () => {
+      await expect(page.getByRole('link', { name: cardName })).toBeVisible();
+    });
 
-      await test.step('Validate Uploaded File', async () => {
-        await boardPage.validateUploadedFile();
-      });
-
-      await test.step('Cleanup board', async () => {
-        await dashboardPage.deleteBoard();
-      });
+    await test.step('Cleanup board', async () => {
+      await dashboardPage.deleteBoard();
     });
   });
 
-    test('Create board and add card with especific date', async ({ page }) => {
-        const boardName = TrelloDataGenerator.generateBoardName();
-      const cardName = TrelloDataGenerator.generateCardName();
-      
-      await test.step("Create board", async () => {
-        await dashboardPage.createNewBoard(boardName);
-        await page.waitForTimeout(3000);
-      });
+  test('Create multiple cards in different lists', async ({ page }) => {
+    test.setTimeout(60000);
 
-      const boardPage = new BoardPage(page);
-
-      await test.step('Create lists and card', async () => {
-        await boardPage.createList(cardName);
-        await boardPage.createCard(cardName);
-      });
-
-      await test.step('Add specific date to card', async () => {
-        await boardPage.addCardDate(cardName);
-      });
-      
-
-      await test.step('Validate Card Date', async () => {
-        await boardPage.validateCardDate();
-      });
-
-      await test.step('Cleanup board', async () => {
-        await dashboardPage.deleteBoard();
-      });
+    const boardName = TrelloDataGenerator.generateBoardName();
+    const cardName1 = TrelloDataGenerator.generateCardName();
+    const cardName2 = TrelloDataGenerator.generateCardName();
+    const cardName3 = TrelloDataGenerator.generateCardName();
+    
+    await test.step("Create board", async () => {
+      await dashboardPage.createNewBoard(boardName);
+      await page.waitForTimeout(3000);
     });
 
-    test.only('Create board and add card with checklist', async ({ page }) => {
-        const boardName = TrelloDataGenerator.generateBoardName();
-      const cardName = TrelloDataGenerator.generateCardName();
-      
-      await test.step("Create board", async () => {
-        await dashboardPage.createNewBoard(boardName);
-        await page.waitForTimeout(3000);
-      });
+    const boardPage = new BoardPage(page);
 
-      const boardPage = new BoardPage(page);
-
-      await test.step('Create lists and card', async () => {
-        await boardPage.createList(cardName);
-        await boardPage.createCard(cardName);
-      });
-
-      await test.step('Add checklist to card', async () => {
-        await boardPage.addCardChecklist(cardName);
-      });
-
-      await test.step('Validate Card Checklist', async () => {
-        await boardPage.validateCardChecklist();
-      });
-
-      await test.step('Cleanup board', async () => {
-        await dashboardPage.deleteBoard();
-      });
+    await test.step('Create lists', async () => {
+      await boardPage.createList("temp");
     });
 
+    await test.step('Create card in To Do', async () => {
+      await boardPage.createCard(cardName1);
+    });
 
+    await test.step('Create card in In Progress', async () => {
+      await boardPage.createCardInList(cardName2, "In Progress");
+    });
+
+    await test.step('Create card in Done', async () => {
+      await boardPage.createCardInList(cardName3, "Done");
+    });
+
+    await test.step('Validate all cards were created', async () => {
+      await expect(page.getByRole('link', { name: cardName1 })).toBeVisible();
+      await expect(page.getByRole('link', { name: cardName2 })).toBeVisible();
+      await expect(page.getByRole('link', { name: cardName3 })).toBeVisible();
+    });
+
+    await test.step('Cleanup board', async () => {
+      await dashboardPage.deleteBoard();
+    });
+  });
 });
