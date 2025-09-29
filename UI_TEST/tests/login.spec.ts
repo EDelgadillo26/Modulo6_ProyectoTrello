@@ -1,8 +1,9 @@
 import { test, expect, Page } from '@playwright/test';
-import { LoginPage } from '../../pages/loginPage';
-import { config, validateConfig } from '../../utils/config';
-import users from '../../data/users.json';
-import appConfig from '../../app-config.json';
+import { LoginPage } from '../pages/loginPage';
+import { config, validateConfig } from '../utils/config';
+import { MfaHelper } from '../utils/mfaHelper';
+import users from '../data/users.json';
+import appConfig from '../app-config.json';
 
 // Combinamos usuarios de users.json + usuario válido de app-config.json
 const allTestUsers = [
@@ -69,7 +70,27 @@ test.afterEach(async ({ page }, testInfo) => {
       await loginPage.submit();
     });
 
-      // 4. Esperar un momento para que procese
+      // 4. Manejar MFA si es usuario válido
+      if (userCase.isValid) {
+        await test.step('Completar MFA (si es necesario)', async () => {
+          try {
+            // Verificar si aparece el campo MFA
+            const mfaSelector = '#two-step-verification-otp-code-input';
+            await page.waitForSelector(mfaSelector, { timeout: 5000 });
+            
+            console.log('🔐 MFA detected - generating code automatically...');
+            const mfaCode = MfaHelper.generateMfaCode();
+            console.log(`🔐 Generated MFA code: ${mfaCode}`);
+            
+            await loginPage.completeMfa(mfaCode);
+          } catch (error) {
+            // Si no hay MFA requerido, continúa normalmente
+            console.log('ℹ️  No MFA required for this login');
+          }
+        });
+      }
+
+      // 5. Esperar un momento para que procese
       await test.step('Esperar un momento para que procese', async () => {
         await page.waitForTimeout(3000);
       });
