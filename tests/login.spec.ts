@@ -1,9 +1,9 @@
 import { test, expect, Page } from '@playwright/test';
-import { LoginPage } from '../../pages/loginPage';
-import { config, validateConfig } from '../../utils/config';
-import { MfaHelper } from '../../utils/mfaHelper';
-import users from '../../data/users.json';
-import appConfig from '../../app-config.json';
+import { LoginPage } from '../pages/loginPage';
+import { config, validateConfig } from '../utils/config';
+import { MfaHelper } from '../utils/mfaHelper';
+import users from '../data/users.json';
+import appConfig from '../app-config.json';
 
 // Combinamos usuarios de users.json + usuario válido de app-config.json
 const allTestUsers = [

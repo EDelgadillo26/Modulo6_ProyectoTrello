@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
-import { TrelloDataGenerator } from "../../utils/trelloDataGenerator";
-import { DashboardPage } from "../../pages/dashboardPage";
-import { BoardPage } from "../../pages/boardPage";
+import { TrelloDataGenerator } from "../utils/trelloDataGenerator";
+import { DashboardPage } from "../pages/dashboardPage";
+import { BoardPage } from "../pages/boardPage";
 
 test.describe("Board Creation Tests", () => {
   let dashboardPage: DashboardPage;

@@ -1,6 +1,6 @@
 import { test, expect} from "@playwright/test";
-import { DashboardPage } from "../../pages/dashboardPage";
-import { TrelloDataGenerator } from "../../utils/trelloDataGenerator";
+import { DashboardPage } from "../pages/dashboardPage";
+import { TrelloDataGenerator } from "../utils/trelloDataGenerator";
 
 test.describe("Test Cases Dashboard", () => {
     let dashboardPage: DashboardPage;
