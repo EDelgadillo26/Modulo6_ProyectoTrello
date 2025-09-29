@@ -40,7 +40,7 @@ test.describe("Card Functionality Tests", () => {
 
   // Generar un test para cada tipo de archivo
   fileTypes.forEach(({ type, method, description }) => {
-    test.only(description, async ({ page }) => {
+    test(description, async ({ page }) => {
       test.setTimeout(60000);
 
       const cardName = TrelloDataGenerator.generateCardName();
@@ -93,6 +93,24 @@ test.describe("Card Functionality Tests", () => {
 
     await test.step('Validate Card Checklist', async () => {
       await cardPage.validateCardChecklist();
+    });
+  });
+
+  test('Add labels to card', async ({ page }) => {
+    test.setTimeout(60000);
+    
+    const cardName = TrelloDataGenerator.generateCardName();
+    
+    await test.step('Create test card', async () => {
+      await cardPage.createCard(cardName);
+    });
+
+    await test.step('Add labels to card', async () => {
+      await cardPage.addLabelsToCard(cardName);
+    });
+
+    await test.step('Validate Card Labels', async () => {
+      await cardPage.validateCardLabels();
     });
   });
 });
