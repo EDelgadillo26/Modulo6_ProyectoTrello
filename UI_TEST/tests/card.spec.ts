@@ -40,7 +40,7 @@ test.describe("Card Functionality Tests", () => {
 
   // Generar un test para cada tipo de archivo
   fileTypes.forEach(({ type, method, description }) => {
-    test.only(description, async ({ page }) => {
+    test(description, async ({ page }) => {
       test.setTimeout(60000);
 
       const cardName = TrelloDataGenerator.generateCardName();

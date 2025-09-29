@@ -79,4 +79,74 @@ test.describe("Board Creation Tests", () => {
     });
 
   });
+
+   test('Edit Name Board', async ({ page }) => {
+    test.setTimeout(60000);
+
+    const boardName = TrelloDataGenerator.generateBoardName();
+    const newBoardName = TrelloDataGenerator.generateBoardName();
+
+    
+    await test.step("Create board", async () => {
+      await dashboardPage.createNewBoard(boardName);
+      await page.waitForTimeout(3000);
+    });
+
+    const boardPage = new BoardPage(page);
+
+    await test.step('Edit Board Name', async () => {
+      await boardPage.editBoardName(newBoardName);
+    });
+
+    await test.step('Validate Board Name Change', async () => {
+      await boardPage.validateBoardName(newBoardName);
+    });
+  });
+
+  test('Validate that Inbox Menu is Displayed', async ({ page }) => {
+      test.setTimeout(60000);
+
+      const boardName = TrelloDataGenerator.generateBoardName();
+      const newBoardName = TrelloDataGenerator.generateBoardName();
+
+      
+      await test.step("Create board", async () => {
+        await dashboardPage.createNewBoard(boardName);
+        await page.waitForTimeout(3000);
+      });
+
+      const boardPage = new BoardPage(page);
+
+      await test.step('Open Inbox Menu', async () => {
+        await boardPage.openInboxMenu();
+      });
+
+      await test.step('Validate Inbox Menu Display', async () => {
+        await boardPage.validateOpenInboxMenu();
+      });
+    });
+
+  test('Validate Planner Menu Display', async ({ page }) => {
+      test.setTimeout(60000);
+
+      const boardName = TrelloDataGenerator.generateBoardName();
+      const newBoardName = TrelloDataGenerator.generateBoardName();
+
+      
+      await test.step("Create board", async () => {
+        await dashboardPage.createNewBoard(boardName);
+        await page.waitForTimeout(3000);
+      });
+
+      const boardPage = new BoardPage(page);
+
+      await test.step('Open Planner Menu', async () => {
+        await boardPage.openPlannerMenu();
+      });
+
+      await test.step('Validate Planner Menu Display', async () => {
+        await boardPage.validateOpenPlannerMenu();
+      });
+    });
+
 });

@@ -36,6 +36,35 @@ export class BoardPage {
     await this.page.waitForTimeout(1000); // Esperar a que se termine la creación
   }
 
+  async editBoardName(newBoardName: string){
+    await this.page.getByTestId('board-name-display').click();
+    await this.page.getByTestId('board-name-input').fill(newBoardName);
+    await this.page.getByTestId('board-name-input').press('Enter');
+  }
+  async validateBoardName(newBoardName: string){
+    const boardNameLocator = this.page.getByTestId('board-name-display');
+    await expect(boardNameLocator).toHaveText(newBoardName);
+  }
+
+  async openInboxMenu(){
+    this.page.getByTestId('panel-nav-inbox-button').click();
+  }
+
+  async validateOpenInboxMenu(){
+    await this.page.getByTestId('inbox-header').getByText('Inbox').waitFor({ state: 'visible', timeout: 10000 });
+    const inboxMenu = this.page.getByTestId('inbox-header').getByText('Inbox');
+    await expect(inboxMenu).toBeVisible();
+  }
+
+    async openPlannerMenu(){
+    this.page.getByTestId('panel-nav-planner-button').click();
+  }
+
+  async validateOpenPlannerMenu(){
+    await this.page.getByRole('heading', { name: 'Planner' }).waitFor({ state: 'visible', timeout: 10000 });
+    const plannerMenu = this.page.getByRole('heading', { name: 'Planner' });
+    await expect(plannerMenu).toBeVisible();
+  }
   // ========== CARD CREATION METHODS ==========
   async createCard(cardName: string){
     await this.page.getByRole('button', { name: 'Add a card in To Do' }).waitFor({ state: 'visible', timeout: 10000 });
