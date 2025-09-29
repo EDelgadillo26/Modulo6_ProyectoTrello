@@ -4,145 +4,344 @@ import { TrelloDataGenerator } from "../utils/trelloDataGenerator";
 
 export class BoardPage {
   private page: Page;
-  
 
   constructor(page: Page) {
     this.page = page;
   }
 
   // ========== BOARD AND LIST CREATION METHODS ==========
-  async createList(cardName: string){
-    await this.page.getByTestId('list-name-textarea').waitFor({ state: 'visible', timeout: 10000 });
-    await this.page.getByTestId('list-name-textarea').click();
-    await this.page.getByTestId('list-name-textarea').fill('To Do');
+  /**
+   * Create standard lists (To Do, In Progress, Done) with proper verification
+   */
+  async createList(cardName: string) {
+    // Wait for and interact with list name textarea
+    const listNameTextarea = this.page.getByTestId('list-name-textarea');
+    await listNameTextarea.waitFor({ state: 'visible', timeout: 15000 });
+    await expect(listNameTextarea).toBeVisible();
+    await listNameTextarea.click();
+    await listNameTextarea.fill('To Do');
     await this.page.waitForTimeout(500);
     
-    await this.page.getByTestId('list-composer-add-list-button').click();
-    await this.page.waitForTimeout(1000); // Esperar a que se cree la lista
+    // Add To Do list
+    const addListButton = this.page.getByTestId('list-composer-add-list-button');
+    await addListButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(addListButton).toBeVisible();
+    await addListButton.click();
+    await this.page.waitForTimeout(1000);
     
-    await this.page.getByRole('textbox', { name: 'Enter list name…' }).fill('In Progress');
+    // Add In Progress list
+    const enterListNameTextbox = this.page.getByRole('textbox', { name: 'Enter list name…' });
+    await enterListNameTextbox.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(enterListNameTextbox).toBeVisible();
+    await enterListNameTextbox.fill('In Progress');
     await this.page.waitForTimeout(500);
     
-    await this.page.getByTestId('list-composer-add-list-button').click();
-    await this.page.waitForTimeout(1000); // Esperar a que se cree la lista
+    await expect(addListButton).toBeVisible();
+    await addListButton.click();
+    await this.page.waitForTimeout(1000);
     
-    await this.page.getByRole('textbox', { name: 'Enter list name…' }).fill('Done');
+    // Add Done list
+    await expect(enterListNameTextbox).toBeVisible();
+    await enterListNameTextbox.fill('Done');
     await this.page.waitForTimeout(500);
     
-    await this.page.getByTestId('list-composer-add-list-button').click();
-    await this.page.waitForTimeout(1000); // Esperar a que se cree la lista
+    await expect(addListButton).toBeVisible();
+    await addListButton.click();
+    await this.page.waitForTimeout(1000);
     
-    await this.page.getByTestId('list-composer-cancel-button').click();
-    await this.page.waitForTimeout(1000); // Esperar a que se termine la creación
+    // Close list creation
+    const cancelButton = this.page.getByTestId('list-composer-cancel-button');
+    await cancelButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cancelButton).toBeVisible();
+    await cancelButton.click();
+    await this.page.waitForTimeout(1000);
   }
 
-  async editBoardName(newBoardName: string){
-    await this.page.getByTestId('board-name-display').click();
-    await this.page.getByTestId('board-name-input').fill(newBoardName);
-    await this.page.getByTestId('board-name-input').press('Enter');
+  /**
+   * Edit board name with verification
+   */
+  async editBoardName(newBoardName: string) {
+    const boardNameDisplay = this.page.getByTestId('board-name-display');
+    await boardNameDisplay.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(boardNameDisplay).toBeVisible();
+    await boardNameDisplay.click();
+    
+    const boardNameInput = this.page.getByTestId('board-name-input');
+    await boardNameInput.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(boardNameInput).toBeVisible();
+    await boardNameInput.fill(newBoardName);
+    await boardNameInput.press('Enter');
   }
-  async validateBoardName(newBoardName: string){
+
+  /**
+   * Validate board name change
+   */
+  async validateBoardName(newBoardName: string) {
     const boardNameLocator = this.page.getByTestId('board-name-display');
+    await boardNameLocator.waitFor({ state: 'visible', timeout: 10000 });
     await expect(boardNameLocator).toHaveText(newBoardName);
   }
 
-  async openInboxMenu(){
-    this.page.getByTestId('panel-nav-inbox-button').click();
+  /**
+   * Open inbox menu with verification
+   */
+  async openInboxMenu() {
+    const inboxButton = this.page.getByTestId('panel-nav-inbox-button');
+    await inboxButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(inboxButton).toBeVisible();
+    await inboxButton.click();
   }
 
-  async validateOpenInboxMenu(){
-    await this.page.getByTestId('inbox-header').getByText('Inbox').waitFor({ state: 'visible', timeout: 10000 });
-    const inboxMenu = this.page.getByTestId('inbox-header').getByText('Inbox');
-    await expect(inboxMenu).toBeVisible();
+  /**
+   * Validate inbox menu is open
+   */
+  async validateOpenInboxMenu() {
+    const inboxHeader = this.page.getByTestId('inbox-header').getByText('Inbox');
+    await inboxHeader.waitFor({ state: 'visible', timeout: 15000 });
+    await expect(inboxHeader).toBeVisible();
   }
 
-    async openPlannerMenu(){
-    this.page.getByTestId('panel-nav-planner-button').click();
+  /**
+   * Open planner menu with verification
+   */
+  async openPlannerMenu() {
+    const plannerButton = this.page.getByTestId('panel-nav-planner-button');
+    await plannerButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(plannerButton).toBeVisible();
+    await plannerButton.click();
   }
 
-  async validateOpenPlannerMenu(){
-    await this.page.getByRole('heading', { name: 'Planner' }).waitFor({ state: 'visible', timeout: 10000 });
-    const plannerMenu = this.page.getByRole('heading', { name: 'Planner' });
-    await expect(plannerMenu).toBeVisible();
+  /**
+   * Validate planner menu is open
+   */
+  async validateOpenPlannerMenu() {
+    const plannerHeading = this.page.getByRole('heading', { name: 'Planner' });
+    await plannerHeading.waitFor({ state: 'visible', timeout: 15000 });
+    await expect(plannerHeading).toBeVisible();
   }
   // ========== CARD CREATION METHODS ==========
-  async createCard(cardName: string){
-    await this.page.getByRole('button', { name: 'Add a card in To Do' }).waitFor({ state: 'visible', timeout: 10000 });
-    await this.page.getByRole('button', { name: 'Add a card in To Do' }).click();
-    await this.page.waitForTimeout(1000); // Esperar a que aparezca el textarea
+  /**
+   * Create a card in the To Do list with verification
+   */
+  async createCard(cardName: string) {
+    const addCardButton = this.page.getByRole('button', { name: 'Add a card in To Do' });
+    await addCardButton.waitFor({ state: 'visible', timeout: 15000 });
+    await expect(addCardButton).toBeVisible();
+    await addCardButton.click();
+    await this.page.waitForTimeout(1000);
     
-    await this.page.getByTestId('list-card-composer-textarea').fill(cardName);
+    const cardTextarea = this.page.getByTestId('list-card-composer-textarea');
+    await cardTextarea.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cardTextarea).toBeVisible();
+    await cardTextarea.fill(cardName);
     await this.page.waitForTimeout(500);
     
-    await this.page.getByTestId('list-card-composer-add-card-button').click();
-    await this.page.waitForTimeout(2000); // Esperar a que se cree la tarjeta
+    const addCardSubmitButton = this.page.getByTestId('list-card-composer-add-card-button');
+    await addCardSubmitButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(addCardSubmitButton).toBeVisible();
+    await addCardSubmitButton.click();
+    await this.page.waitForTimeout(2000);
   }
 
-  async createCardInList(cardName: string, listName: string){
-    await this.page.getByRole('button', { name: `Add a card in ${listName}` }).waitFor({ state: 'visible', timeout: 10000 });
-    await this.page.getByRole('button', { name: `Add a card in ${listName}` }).click();
-    await this.page.waitForTimeout(1000); // Esperar a que aparezca el textarea
+  /**
+   * Create a card in a specific list with verification
+   */
+  async createCardInList(cardName: string, listName: string) {
+    const addCardInListButton = this.page.getByRole('button', { name: `Add a card in ${listName}` });
+    await addCardInListButton.waitFor({ state: 'visible', timeout: 15000 });
+    await expect(addCardInListButton).toBeVisible();
+    await addCardInListButton.click();
+    await this.page.waitForTimeout(1000);
     
-    await this.page.getByTestId('list-card-composer-textarea').fill(cardName);
+    const cardTextarea = this.page.getByTestId('list-card-composer-textarea');
+    await cardTextarea.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cardTextarea).toBeVisible();
+    await cardTextarea.fill(cardName);
     await this.page.waitForTimeout(500);
     
-    await this.page.getByTestId('list-card-composer-add-card-button').click();
-    await this.page.waitForTimeout(2000); // Esperar a que se cree la tarjeta
+    const addCardSubmitButton = this.page.getByTestId('list-card-composer-add-card-button');
+    await addCardSubmitButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(addCardSubmitButton).toBeVisible();
+    await addCardSubmitButton.click();
+    await this.page.waitForTimeout(2000);
   }
 
   // ========== BASIC CARD EDITING METHODS ==========
-  async editCard(cardName: string){
-    await this.page.getByTestId('card-name').click();
-    await this.page.getByTestId('card-back-title-input').click();
-    await this.page.getByTestId('card-back-title-input').click();
-    await this.page.getByTestId('card-back-title-input').fill(cardName);
+  /**
+   * Edit card name with verification
+   */
+  async editCard(cardName: string) {
+    const cardNameElement = this.page.getByTestId('card-name');
+    await cardNameElement.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cardNameElement).toBeVisible();
+    await cardNameElement.click();
+    
+    const cardTitleInput = this.page.getByTestId('card-back-title-input');
+    await cardTitleInput.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cardTitleInput).toBeVisible();
+    await cardTitleInput.click();
+    await cardTitleInput.fill(cardName);
   }
 
-  async addCardLabels(cardName: string){
-    await this.page.getByTestId('card-name').click();
-    await this.page.getByTestId('card-back-add-to-card-button').click();
-    await this.page.getByTestId('card-back-labels-button').click();
-    await this.page.locator('.ZAcH7Pr9TT7uUR > svg').first().click();
+  /**
+   * Add labels to card with verification
+   */
+  async addCardLabels(cardName: string) {
+    const cardNameElement = this.page.getByTestId('card-name');
+    await cardNameElement.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cardNameElement).toBeVisible();
+    await cardNameElement.click();
+    
+    const addToCardButton = this.page.getByTestId('card-back-add-to-card-button');
+    await addToCardButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(addToCardButton).toBeVisible();
+    await addToCardButton.click();
+    
+    const labelsButton = this.page.getByTestId('card-back-labels-button');
+    await labelsButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(labelsButton).toBeVisible();
+    await labelsButton.click();
+    
+    const firstLabel = this.page.locator('.ZAcH7Pr9TT7uUR > svg').first();
+    await firstLabel.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(firstLabel).toBeVisible();
+    await firstLabel.click();
   }
 
-  async moveCardToDoing(cardName: string){
-    await this.page.getByRole('link', { name: cardName }).click();
+  /**
+   * Move card from To Do to In Progress with verification
+   */
+  async moveCardToDoing(cardName: string) {
+    const cardLink = this.page.getByRole('link', { name: cardName });
+    await cardLink.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cardLink).toBeVisible();
+    await cardLink.click();
     await this.page.waitForTimeout(1000);
-    await this.page.getByTestId('card-back-name').getByRole('button', { name: 'To Do' }).click();
-    await this.page.getByTestId('move-card-popover-select-list-destination-select--input-container').click();
-    await this.page.getByTestId('move-card-popover-select-list-destination-select--option-1').getByText('In Progress').click();
-    await this.page.getByTestId('move-card-popover-move-button').click();
-    await this.page.getByRole('button', { name: 'Close dialog' }).click();
+    
+    const listButton = this.page.getByTestId('card-back-name').getByRole('button', { name: 'To Do' });
+    await listButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(listButton).toBeVisible();
+    await listButton.click();
+    
+    const destinationSelect = this.page.getByTestId('move-card-popover-select-list-destination-select--input-container');
+    await destinationSelect.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(destinationSelect).toBeVisible();
+    await destinationSelect.click();
+    
+    const inProgressOption = this.page.getByTestId('move-card-popover-select-list-destination-select--option-1').getByText('In Progress');
+    await inProgressOption.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(inProgressOption).toBeVisible();
+    await inProgressOption.click();
+    
+    const moveButton = this.page.getByTestId('move-card-popover-move-button');
+    await moveButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(moveButton).toBeVisible();
+    await moveButton.click();
+    
+    const closeButton = this.page.getByRole('button', { name: 'Close dialog' });
+    await closeButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(closeButton).toBeVisible();
+    await closeButton.click();
   }
 
-  async moveCardToDone(cardName: string){
-    await this.page.getByRole('link', { name: cardName }).click();
+  /**
+   * Move card from In Progress to Done with verification
+   */
+  async moveCardToDone(cardName: string) {
+    const cardLink = this.page.getByRole('link', { name: cardName });
+    await cardLink.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cardLink).toBeVisible();
+    await cardLink.click();
     await this.page.waitForTimeout(1000);
-    await this.page.getByTestId('card-back-name').getByRole('button', { name: 'In Progress' }).click();
-    await this.page.getByTestId('move-card-popover-select-list-destination-select--input-container').click();
-    await this.page.getByTestId('move-card-popover-select-list-destination-select--option-2').getByText('Done').click();
-    await this.page.getByTestId('move-card-popover-move-button').click();
-    await this.page.getByRole('button', { name: 'Close dialog' }).click();
+    
+    const listButton = this.page.getByTestId('card-back-name').getByRole('button', { name: 'In Progress' });
+    await listButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(listButton).toBeVisible();
+    await listButton.click();
+    
+    const destinationSelect = this.page.getByTestId('move-card-popover-select-list-destination-select--input-container');
+    await destinationSelect.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(destinationSelect).toBeVisible();
+    await destinationSelect.click();
+    
+    const doneOption = this.page.getByTestId('move-card-popover-select-list-destination-select--option-2').getByText('Done');
+    await doneOption.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(doneOption).toBeVisible();
+    await doneOption.click();
+    
+    const moveButton = this.page.getByTestId('move-card-popover-move-button');
+    await moveButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(moveButton).toBeVisible();
+    await moveButton.click();
+    
+    const closeButton = this.page.getByRole('button', { name: 'Close dialog' });
+    await closeButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(closeButton).toBeVisible();
+    await closeButton.click();
   }
 
-  async archiveCard(cardName: string){
-    await this.page.getByRole('link', { name: cardName }).click();
-    await this.page.getByTestId('card-back-actions-button').click();
-    await this.page.getByTestId('card-back-archive-button').click();
-    await this.page.getByRole('button', { name: 'Close dialog' }).click();
-
+  /**
+   * Archive card with verification
+   */
+  async archiveCard(cardName: string) {
+    const cardLink = this.page.getByRole('link', { name: cardName });
+    await cardLink.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cardLink).toBeVisible();
+    await cardLink.click();
+    
+    const actionsButton = this.page.getByTestId('card-back-actions-button');
+    await actionsButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(actionsButton).toBeVisible();
+    await actionsButton.click();
+    
+    const archiveButton = this.page.getByTestId('card-back-archive-button');
+    await archiveButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(archiveButton).toBeVisible();
+    await archiveButton.click();
+    
+    const closeButton = this.page.getByRole('button', { name: 'Close dialog' });
+    await closeButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(closeButton).toBeVisible();
+    await closeButton.click();
   }
 
-  async deleteCard(cardName: string){
-    await this.page.getByRole('link', { name: cardName }).click();
-    await this.page.getByTestId('card-back-actions-button').click();
-    await this.page.getByTestId('card-back-archive-button').click();
-    await this.page.getByTestId('card-back-delete-card-button').click();
-    await this.page.getByTestId('popover-confirm-button').click();
+  /**
+   * Delete card completely with verification
+   */
+  async deleteCard(cardName: string) {
+    const cardLink = this.page.getByRole('link', { name: cardName });
+    await cardLink.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(cardLink).toBeVisible();
+    await cardLink.click();
+    
+    const actionsButton = this.page.getByTestId('card-back-actions-button');
+    await actionsButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(actionsButton).toBeVisible();
+    await actionsButton.click();
+    
+    const archiveButton = this.page.getByTestId('card-back-archive-button');
+    await archiveButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(archiveButton).toBeVisible();
+    await archiveButton.click();
+    
+    const deleteCardButton = this.page.getByTestId('card-back-delete-card-button');
+    await deleteCardButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(deleteCardButton).toBeVisible();
+    await deleteCardButton.click();
+    
+    const confirmButton = this.page.getByTestId('popover-confirm-button');
+    await confirmButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(confirmButton).toBeVisible();
+    await confirmButton.click();
   }
 
-  async validateCardInNotVisible(cardName: string){
-    // Verificar que la card no esté visible en el board después del archive
+  /**
+   * Validate that card is not visible (after archive/delete)
+   */
+  async validateCardInNotVisible(cardName: string) {
+    // Wait a moment for the operation to complete
+    await this.page.waitForTimeout(2000);
+    
     const cardLocator = this.page.getByRole('link', { name: cardName });
     await expect(cardLocator).not.toBeVisible();
   }

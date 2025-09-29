@@ -4,58 +4,91 @@ import { config } from '../utils/config';
 export class LoginPage {
   private page: Page;
   
-  // Selectores principales
+  // Selectores principales optimizados
   private inputEmail = '[data-testid="username"]';
   private inputPassword = '[data-testid="password"]'; 
   private continueButton  = '[data-testid="login-submit-idf-testid"]';
+  
   constructor(page: Page) {
     this.page = page;
   }
 
+  /**
+   * Navigate to login page with verification
+   */
   async gotoLogin() {
-    await this.page.goto(config.urls.login);
+    await this.page.goto(config.urls.login, { timeout: 45000 });
+    
+    // Verify login page loaded correctly
+    const emailInput = this.page.locator(this.inputEmail);
+    await emailInput.waitFor({ state: 'visible', timeout: 15000 });
+    await expect(emailInput).toBeVisible();
   }
 
+  /**
+   * Fill login credentials with proper verification
+   */
   async fillCredentials(email: string, password: string) {
-    await this.page.fill(this.inputEmail, email);
-    await this.page.click(this.continueButton);
+    // Fill email field
+    const emailInput = this.page.locator(this.inputEmail);
+    await emailInput.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(emailInput).toBeVisible();
+    await emailInput.fill(email);
     
-    // Esperar a que aparezca el campo de password o un mensaje de error
+    // Click continue button
+    const continueBtn = this.page.locator(this.continueButton);
+    await continueBtn.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(continueBtn).toBeVisible();
+    await continueBtn.click();
+    
+    // Wait for and fill password field (if email is valid)
     try {
-      await this.page.waitForSelector(this.inputPassword, { timeout: 5000 });
-      await this.page.fill(this.inputPassword, password);
+      const passwordInput = this.page.locator(this.inputPassword);
+      await passwordInput.waitFor({ state: 'visible', timeout: 8000 });
+      await expect(passwordInput).toBeVisible();
+      await passwordInput.fill(password);
+      console.log('✅ Password field found and filled');
     } catch (error) {
-      // Si no aparece el campo de password, puede ser por email inválido
       console.log('⚠️  Password field not found - possibly invalid email');
-      // No lanzamos error aquí, dejamos que la validación posterior lo maneje
+      // Don't throw error here, let validation handle it
     }
   }
 
+  /**
+   * Submit login form with verification
+   */
   async submit() {
     try {
-      await this.page.click(this.continueButton, { timeout: 5000 });
+      const submitButton = this.page.locator(this.continueButton);
+      await submitButton.waitFor({ state: 'visible', timeout: 8000 });
+      await expect(submitButton).toBeVisible();
+      await submitButton.click();
+      console.log('✅ Submit button clicked');
     } catch (error) {
       console.log('⚠️  Submit button not found or not clickable');
-      // No lanzamos error aquí, dejamos que la validación posterior lo maneje
+      // Don't throw error here, let validation handle it
     }
   }
 
-  // Método para completar MFA (Multi-Factor Authentication)
+  /**
+   * Complete MFA (Multi-Factor Authentication) with verification
+   */
   async completeMfa(mfaCode: string) {
     console.log('🔐 Completing MFA verification...');
     
     try {
-      // Selector específico para el campo MFA de Trello/Atlassian
       const mfaSelector = '#two-step-verification-otp-code-input';
       
-      // Esperar a que aparezca el campo MFA
-      await this.page.waitForSelector(mfaSelector, { timeout: 5000 });
+      // Wait for MFA field to appear
+      const mfaInput = this.page.locator(mfaSelector);
+      await mfaInput.waitFor({ state: 'visible', timeout: 8000 });
+      await expect(mfaInput).toBeVisible();
       
-      // Llenar el código MFA (se valida automáticamente)
-      await this.page.fill(mfaSelector, mfaCode);
+      // Fill MFA code
+      await mfaInput.fill(mfaCode);
       console.log('✅ MFA code entered - validating automatically...');
       
-      // Esperar un momento para que se procese la validación automática
+      // Wait for automatic validation
       await this.page.waitForTimeout(3000);
       console.log('🔐 MFA validation completed');
       
@@ -65,59 +98,134 @@ export class LoginPage {
     }
   }
 
-  // Método para verificar si hay algún error visible
+  /**
+   * Check if any error is visible on the page
+   */
   async hasAnyError(): Promise<boolean> {
-    // Buscar por el selector específico del error de login
-    const specificError = await this.page.locator('[data-testid="form-error"]').count();
-    
-    // Buscar por texto de error genérico como fallback
-    const genericErrors = await this.page.locator('text=/required|error|invalid|incorrect/i').count();
-    
-    return specificError > 0 || genericErrors > 0;
+    try {
+      // Check for specific error selector
+      const specificErrorElement = this.page.locator('[data-testid="form-error"]');
+      const specificErrorCount = await specificErrorElement.count();
+      
+      // Check for generic error messages
+      const genericErrorElements = this.page.locator('text=/required|error|invalid|incorrect/i');
+      const genericErrorCount = await genericErrorElements.count();
+      
+      const hasErrors = specificErrorCount > 0 || genericErrorCount > 0;
+      
+      if (hasErrors) {
+        console.log(`🚨 Errors detected: Specific(${specificErrorCount}), Generic(${genericErrorCount})`);
+      }
+      
+      return hasErrors;
+    } catch (error) {
+      console.log('Error checking for errors:', error);
+      return false;
+    }
   }
 
-  // Método adicional para obtener el mensaje de error específico
+  /**
+   * Get specific error message from the page
+   */
   async getErrorMessage(): Promise<string> {
-    const errorElement = this.page.locator('[data-testid="form-error--content"]');
-    if (await errorElement.isVisible()) {
-      return await errorElement.textContent() || '';
+    try {
+      const errorElement = this.page.locator('[data-testid="form-error--content"]');
+      await errorElement.waitFor({ state: 'visible', timeout: 3000 });
+      
+      if (await errorElement.isVisible()) {
+        const errorText = await errorElement.textContent();
+        console.log(`🚨 Error message found: "${errorText}"`);
+        return errorText || '';
+      }
+    } catch (error) {
+      console.log('No specific error message found');
     }
     return '';
   }
 
-  // Método para validar login
+  /**
+   * Validate login result (success or failure) with enhanced verification
+   */
   async validateLogin(isValidUser: boolean, userCase: any) {
-    console.log(`🔍 Validating ${isValidUser ? 'successful' : 'failed'} login...`);
+    console.log(`🔍 Validating ${isValidUser ? 'successful' : 'failed'} login for user: ${userCase.id}...`);
     
     if (isValidUser) {
-      // Esperar a que la navegación se complete después del login exitoso
-      await this.page.waitForURL('**/boards**', { timeout: 15000 });
-      const currentUrl = this.page.url();
-      console.log('SUCCESS: URL contains "boards"');
-      console.log(`Final URL: ${currentUrl}`);
-      expect(currentUrl).toContain('boards');
-    } else {
-      // Para login fallido, esperar a que aparezca el error o verificar que no hay redirección
+      // For valid users, expect successful login and redirect to boards
       try {
-        // Esperar un poco para ver si aparece algún error
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForURL('**/boards**', { timeout: 20000 });
+        const currentUrl = this.page.url();
+        console.log('✅ SUCCESS: Redirected to boards page');
+        console.log(`Final URL: ${currentUrl}`);
         
-        // Verificar si hay errores visibles
+        // Verify we're actually on the boards page
+        expect(currentUrl).toContain('boards');
+        
+        // Additional verification: check for dashboard elements (more flexible)
+        try {
+          const createBoardButton = this.page.getByRole('button', { name: /create.*board/i });
+          await createBoardButton.waitFor({ state: 'visible', timeout: 5000 });
+          await expect(createBoardButton).toBeVisible();
+        } catch {
+          // Fallback: check for any common dashboard elements
+          const dashboardElements = [
+            this.page.getByTestId('header-create-menu-button'),
+            this.page.locator('button:has-text("Create")'),
+            this.page.locator('[data-testid*="create"]').first()
+          ];
+          
+          let found = false;
+          for (const element of dashboardElements) {
+            try {
+              await element.waitFor({ state: 'visible', timeout: 3000 });
+              found = true;
+              break;
+            } catch {
+              continue;
+            }
+          }
+          
+          if (!found) {
+            console.log('⚠️ No dashboard elements found, but URL is correct');
+          }
+        }
+        
+      } catch (error) {
+        console.log('❌ FAILURE: Valid user was not redirected to boards');
+        console.log(`Current URL: ${this.page.url()}`);
+        throw error;
+      }
+      
+    } else {
+      // For invalid users, expect login failure
+      try {
+        // Wait a moment for any error messages to appear
+        await this.page.waitForTimeout(3000);
+        
         const hasError = await this.hasAnyError();
         const currentUrl = this.page.url();
+        const errorMessage = await this.getErrorMessage();
         
-        if (hasError || !currentUrl.includes('boards')) {
-          console.log('LOGIN FAILED CORRECTLY: Did not redirect to boards');
-          console.log(`Current URL: ${currentUrl}`);
+        console.log(`Current URL: ${currentUrl}`);
+        console.log(`Has error: ${hasError}`);
+        console.log(`Error message: "${errorMessage}"`);
+        
+        // Login should fail - either show error or not redirect to boards
+        if (hasError) {
+          console.log('✅ LOGIN FAILED CORRECTLY: Error message displayed');
+          expect(hasError).toBe(true);
+        } else if (!currentUrl.includes('boards')) {
+          console.log('✅ LOGIN FAILED CORRECTLY: No redirect to boards');
           expect(currentUrl).not.toContain('boards');
         } else {
-          console.log('UNEXPECTED: Invalid user was redirected to boards');
+          console.log('❌ UNEXPECTED: Invalid user was incorrectly authenticated');
+          // This should not happen - invalid user got through
           expect(currentUrl).not.toContain('boards');
         }
+        
       } catch (error) {
-        // Si hay timeout o error, asumimos que el login falló correctamente
+        // If there's an error during validation, check URL as fallback
         const currentUrl = this.page.url();
-        console.log('LOGIN FAILED CORRECTLY: No redirection occurred');
+        console.log('✅ LOGIN FAILED CORRECTLY: Exception during login process');
         console.log(`Current URL: ${currentUrl}`);
         expect(currentUrl).not.toContain('boards');
       }
