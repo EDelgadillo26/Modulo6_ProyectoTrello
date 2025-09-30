@@ -1,4 +1,4 @@
-from api.logs.logger import logger
+from logs.logger import logger
 import json
 
 def log_request_response(endpoint, payload=None, response=None):

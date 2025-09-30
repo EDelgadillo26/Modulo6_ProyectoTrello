@@ -1,14 +1,14 @@
 from .endpoint import TrelloAPI
-from api.logs.conflogger import log_request_response
-from api.logs.logger import logger
+from logs.conflogger import log_request_response
+from logs.logger import logger
 
 client = TrelloAPI()
 
-def crear_card(list_id, name, desc=""):
+def create_card(list_id, name, desc=""):
     payload = {"idList": list_id, "name": name, "desc": desc}
     try:
         response = client.post("/cards", payload=payload)
-        log_request_response(endpoint="/cards", payload=payload, response=response)
+        log_request_response(endpoint="/cards", payload=payload, response=response.json())
         if 'id' in response:
             logger.debug(f"Card ID: {response['id']}")
         else:
@@ -18,7 +18,7 @@ def crear_card(list_id, name, desc=""):
         response = None
     return response
 
-def eliminar_card(card_id):
+def delete_card(card_id):
     try:
         response = client.delete(f"/cards/{card_id}")
         logger.debug(f"Card {card_id} eliminado. Response: {response}")
@@ -27,7 +27,7 @@ def eliminar_card(card_id):
         response = None
     return response
 
-def obtener_cards(board_id):
+def get_cards(board_id):
     try:
         response = client.get(f"/boards/{board_id}/cards")
         logger.debug(f"Cards en board {board_id}: {response}")

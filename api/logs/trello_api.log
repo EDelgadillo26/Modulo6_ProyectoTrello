@@ -1,0 +1,1335 @@
+2025-09-30 02:15:19,888 - trello_api_logger - DEBUG - No se pudo crear checklist: 401 Client Error: Unauthorized for url: https://api.trello.com/1/cards/68db74c3f86d78c5810462da/checklists?key=tu_api_key&token=tu_token
+2025-09-30 02:16:43,704 - trello_api_logger - DEBUG - No se pudo crear checklist: 400 Client Error: Bad Request for url: https://api.trello.com/1/cards/68db74c3f86d78c5810462da/checklists?key=d71b08075bfe7682ec3b3f69b41b7a2a&token=ATTA2b36f144037787e70ab305a443e466dd1bbb400000876979878e8e9393ebfd5839B20D6C
+2025-09-30 02:19:26,609 - trello_api_logger - DEBUG - No se pudo crear checklist: 400 Client Error: Bad Request for url: https://api.trello.com/1/cards/68db74c3f86d78c5810462da/checklists?key=d71b08075bfe7682ec3b3f69b41b7a2a&token=ATTA2b36f144037787e70ab305a443e466dd1bbb400000876979878e8e9393ebfd5839B20D6C
+2025-09-30 02:24:35,397 - trello_api_logger - DEBUG - No se pudo crear checklist: 400 Client Error: Bad Request for url: https://api.trello.com/1/checklists?key=d71b08075bfe7682ec3b3f69b41b7a2a&token=ATTA2b36f144037787e70ab305a443e466dd1bbb400000876979878e8e9393ebfd5839B20D6C
+2025-09-30 02:38:42,050 - trello_api_logger - INFO - Endpoint: /checklists
+2025-09-30 02:38:42,051 - trello_api_logger - INFO - Payload: {
+  "name": "Checklist de prueba",
+  "idCard": "68db74c3f86d78c5810462da"
+}
+2025-09-30 02:38:42,051 - trello_api_logger - INFO - Response: {
+  "id": "68db7af1d50d49ea8248f006",
+  "name": "Checklist de prueba",
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idCard": "68db74c3f86d78c5810462da",
+  "pos": 140737488355328,
+  "checkItems": [],
+  "limits": {}
+}
+2025-09-30 02:38:42,051 - trello_api_logger - DEBUG - Checklist ID: 68db7af1d50d49ea8248f006
+2025-09-30 02:38:42,870 - trello_api_logger - DEBUG - Checklist 68db7af1d50d49ea8248f006 eliminado. Response: {'limits': {}}
+2025-09-30 02:43:24,678 - trello_api_logger - INFO - Endpoint: /checklists
+2025-09-30 02:43:24,679 - trello_api_logger - INFO - Payload: {
+  "name": "Checklist de prueba",
+  "idCard": "68db74c3f86d78c5810462da"
+}
+2025-09-30 02:43:24,679 - trello_api_logger - INFO - Response: {
+  "id": "68db7c0c428a7749afbbf2d0",
+  "name": "Checklist de prueba",
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idCard": "68db74c3f86d78c5810462da",
+  "pos": 140737488355328,
+  "checkItems": [],
+  "limits": {}
+}
+2025-09-30 02:43:24,679 - trello_api_logger - DEBUG - Checklist ID: 68db7c0c428a7749afbbf2d0
+2025-09-30 02:43:25,807 - trello_api_logger - DEBUG - Checklist 68db7c0c428a7749afbbf2d0 eliminado. Response: {'limits': {}}
+2025-09-30 02:44:28,784 - trello_api_logger - INFO - Endpoint: /checklists
+2025-09-30 02:44:28,785 - trello_api_logger - INFO - Payload: {
+  "name": "Checklist de prueba",
+  "idCard": "68db74c3f86d78c5810462da"
+}
+2025-09-30 02:44:28,785 - trello_api_logger - INFO - Response: {
+  "id": "68db7c4cee8d6ab451c3cbc9",
+  "name": "Checklist de prueba",
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idCard": "68db74c3f86d78c5810462da",
+  "pos": 140737488355328,
+  "checkItems": [],
+  "limits": {}
+}
+2025-09-30 02:44:28,785 - trello_api_logger - DEBUG - Checklist ID: 68db7c4cee8d6ab451c3cbc9
+2025-09-30 02:44:29,603 - trello_api_logger - DEBUG - Checklist 68db7c4cee8d6ab451c3cbc9 eliminado. Response: {'limits': {}}
+2025-09-30 02:46:09,181 - trello_api_logger - INFO - Endpoint: /checklists
+2025-09-30 02:46:09,181 - trello_api_logger - INFO - Payload: {
+  "name": "Checklist de prueba",
+  "idCard": "68db74c3f86d78c5810462da"
+}
+2025-09-30 02:46:09,181 - trello_api_logger - INFO - Response: {
+  "id": "68db7cb04b77dc318922b8cc",
+  "name": "Checklist de prueba",
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idCard": "68db74c3f86d78c5810462da",
+  "pos": 140737488355328,
+  "checkItems": [],
+  "limits": {}
+}
+2025-09-30 02:46:09,182 - trello_api_logger - DEBUG - Checklist ID: 68db7cb04b77dc318922b8cc
+2025-09-30 02:46:10,056 - trello_api_logger - DEBUG - Checklist 68db7cb04b77dc318922b8cc eliminado. Response: {'limits': {}}
+2025-09-30 02:52:38,090 - trello_api_logger - INFO - Endpoint: /checklists
+2025-09-30 02:52:38,090 - trello_api_logger - INFO - Payload: {
+  "name": "Checklist de prueba",
+  "idCard": "68db74c3f86d78c5810462da"
+}
+2025-09-30 02:52:38,096 - trello_api_logger - INFO - Response: {
+  "id": "68db7e35375870e5f88f2955",
+  "name": "Checklist de prueba",
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idCard": "68db74c3f86d78c5810462da",
+  "pos": 140737488355328,
+  "checkItems": [],
+  "limits": {}
+}
+2025-09-30 02:52:38,096 - trello_api_logger - DEBUG - Checklist ID: 68db7e35375870e5f88f2955
+2025-09-30 02:52:38,741 - trello_api_logger - DEBUG - Checklist 68db7e35375870e5f88f2955 eliminado. Response: {'limits': {}}
+2025-09-30 02:52:39,786 - trello_api_logger - INFO - Endpoint: /checklists
+2025-09-30 02:52:39,787 - trello_api_logger - INFO - Payload: {
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "idCard": "68db74c3f86d78c5810462da"
+}
+2025-09-30 02:52:39,787 - trello_api_logger - INFO - Response: {
+  "id": "68db7e37c6f30338478d0939",
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idCard": "68db74c3f86d78c5810462da",
+  "pos": 140737488355328,
+  "checkItems": [],
+  "limits": {}
+}
+2025-09-30 02:52:39,788 - trello_api_logger - DEBUG - Checklist ID: 68db7e37c6f30338478d0939
+2025-09-30 03:04:08,240 - trello_api_logger - INFO - Endpoint: /checklists
+2025-09-30 03:04:08,241 - trello_api_logger - INFO - Payload: {
+  "name": "Checklist de prueba",
+  "idCard": "68db74c3f86d78c5810462da"
+}
+2025-09-30 03:04:08,241 - trello_api_logger - INFO - Response: {
+  "id": "68db80e7c042c76046467870",
+  "name": "Checklist de prueba",
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idCard": "68db74c3f86d78c5810462da",
+  "pos": 140737488355328,
+  "checkItems": [],
+  "limits": {}
+}
+2025-09-30 03:04:08,241 - trello_api_logger - DEBUG - Checklist ID: 68db80e7c042c76046467870
+2025-09-30 03:04:09,162 - trello_api_logger - DEBUG - Checklist 68db80e7c042c76046467870 eliminado. Response: {'limits': {}}
+2025-09-30 03:04:10,290 - trello_api_logger - INFO - Endpoint: /checklists
+2025-09-30 03:04:10,291 - trello_api_logger - INFO - Payload: {
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "idCard": "68db74c3f86d78c5810462da"
+}
+2025-09-30 03:04:10,291 - trello_api_logger - INFO - Response: {
+  "id": "68db80ea70877bb41d5237f1",
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idCard": "68db74c3f86d78c5810462da",
+  "pos": 140737488355328,
+  "checkItems": [],
+  "limits": {}
+}
+2025-09-30 03:04:10,291 - trello_api_logger - DEBUG - Checklist ID: 68db80ea70877bb41d5237f1
+2025-09-30 03:04:10,931 - trello_api_logger - DEBUG - Checklist 68db80ea70877bb41d5237f1 eliminado. Response: {'limits': {}}
+2025-09-30 03:04:12,403 - trello_api_logger - DEBUG - Checklist 68db80eb7cc7b7caa96b12bc eliminado. Response: {'limits': {}}
+2025-09-30 03:14:57,058 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 03:14:57,059 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "Card de prueba",
+  "desc": ""
+}
+2025-09-30 03:14:57,059 - trello_api_logger - INFO - Response: {
+  "id": "68db837082c522ce8fc2a66c",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T07:14:56.732Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 4,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "Card de prueba",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68db837082c522ce8fc2a66c",
+  "pinned": false,
+  "pos": 140737488371712,
+  "shortLink": "od9yi31I",
+  "shortUrl": "https://trello.com/c/od9yi31I",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/od9yi31I/4-card-de-prueba",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 03:14:57,060 - trello_api_logger - DEBUG - Card ID: 68db837082c522ce8fc2a66c
+2025-09-30 03:14:58,185 - trello_api_logger - DEBUG - Card 68db837082c522ce8fc2a66c eliminado. Response: {'limits': {}}
+2025-09-30 03:14:59,208 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 03:14:59,209 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "desc": ""
+}
+2025-09-30 03:14:59,209 - trello_api_logger - INFO - Response: {
+  "id": "68db837274a61baabc2a3c00",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T07:14:58.982Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 5,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68db837274a61baabc2a3c00",
+  "pinned": false,
+  "pos": 140737488371712,
+  "shortLink": "mmXf7dzr",
+  "shortUrl": "https://trello.com/c/mmXf7dzr",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/mmXf7dzr/5-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 03:14:59,209 - trello_api_logger - DEBUG - Card ID: 68db837274a61baabc2a3c00
+2025-09-30 06:34:25,946 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:34:25,947 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "Card de prueba",
+  "desc": ""
+}
+2025-09-30 06:34:25,947 - trello_api_logger - INFO - Response: {
+  "id": "68dbb232e9623b28b4777a6e",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:34:26.505Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 7,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "Card de prueba",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb232e9623b28b4777a6e",
+  "pinned": false,
+  "pos": 140737488404480,
+  "shortLink": "wsFshEyk",
+  "shortUrl": "https://trello.com/c/wsFshEyk",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/wsFshEyk/7-card-de-prueba",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:34:25,947 - trello_api_logger - DEBUG - Card ID: 68dbb232e9623b28b4777a6e
+2025-09-30 06:34:26,741 - trello_api_logger - DEBUG - Card 68dbb232e9623b28b4777a6e eliminado. Response: {'limits': {}}
+2025-09-30 06:34:28,506 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:34:28,506 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "desc": ""
+}
+2025-09-30 06:34:28,507 - trello_api_logger - INFO - Response: {
+  "id": "68dbb2341de193a664423f66",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:34:28.967Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 8,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb2341de193a664423f66",
+  "pinned": false,
+  "pos": 140737488404480,
+  "shortLink": "7zHGBk1f",
+  "shortUrl": "https://trello.com/c/7zHGBk1f",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/7zHGBk1f/8-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:34:28,507 - trello_api_logger - DEBUG - Card ID: 68dbb2341de193a664423f66
+2025-09-30 06:38:57,259 - trello_api_logger - DEBUG - No se pudo crear card: TrelloAPI.post() got an unexpected keyword argument 'json'
+2025-09-30 06:38:57,419 - trello_api_logger - DEBUG - No se pudo crear card: TrelloAPI.post() got an unexpected keyword argument 'json'
+2025-09-30 06:39:43,012 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:39:43,013 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "Card de prueba",
+  "desc": ""
+}
+2025-09-30 06:39:43,013 - trello_api_logger - INFO - Response: {
+  "id": "68dbb36fb3ebc2db8215f105",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:39:43.357Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 11,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "Card de prueba",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb36fb3ebc2db8215f105",
+  "pinned": false,
+  "pos": 140737488453632,
+  "shortLink": "v9VtAHKl",
+  "shortUrl": "https://trello.com/c/v9VtAHKl",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/v9VtAHKl/11-card-de-prueba",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:39:43,014 - trello_api_logger - DEBUG - Card ID: 68dbb36fb3ebc2db8215f105
+2025-09-30 06:39:44,003 - trello_api_logger - DEBUG - Card 68dbb36fb3ebc2db8215f105 eliminado. Response: {'limits': {}}
+2025-09-30 06:39:45,029 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:39:45,029 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "desc": ""
+}
+2025-09-30 06:39:45,030 - trello_api_logger - INFO - Response: {
+  "id": "68dbb37189559f36f2d90308",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:39:45.535Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 12,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb37189559f36f2d90308",
+  "pinned": false,
+  "pos": 140737488453632,
+  "shortLink": "zb8i0ROD",
+  "shortUrl": "https://trello.com/c/zb8i0ROD",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/zb8i0ROD/12-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:39:45,030 - trello_api_logger - DEBUG - Card ID: 68dbb37189559f36f2d90308
+2025-09-30 06:42:57,850 - trello_api_logger - DEBUG - No se pudo crear card: Object of type Response is not JSON serializable
+2025-09-30 06:42:59,284 - trello_api_logger - DEBUG - No se pudo crear card: Object of type Response is not JSON serializable
+2025-09-30 06:44:12,092 - trello_api_logger - DEBUG - No se pudo crear card: Object of type Response is not JSON serializable
+2025-09-30 06:44:13,627 - trello_api_logger - DEBUG - No se pudo crear card: Object of type Response is not JSON serializable
+2025-09-30 06:45:13,021 - trello_api_logger - DEBUG - No se pudo crear card: Object of type Response is not JSON serializable
+2025-09-30 06:45:14,454 - trello_api_logger - DEBUG - No se pudo crear card: Object of type Response is not JSON serializable
+2025-09-30 06:46:31,767 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:46:31,768 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "Card de prueba",
+  "desc": ""
+}
+2025-09-30 06:46:31,768 - trello_api_logger - INFO - Response: {
+  "id": "68dbb508b0e5fd344506ee3a",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:46:32.338Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 23,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "Card de prueba",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb508b0e5fd344506ee3a",
+  "pinned": false,
+  "pos": 140737488633856,
+  "shortLink": "LIpvhBTS",
+  "shortUrl": "https://trello.com/c/LIpvhBTS",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/LIpvhBTS/23-card-de-prueba",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:46:31,769 - trello_api_logger - DEBUG - No 'id' en respuesta: <Response [200]>
+2025-09-30 06:46:33,108 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:46:33,109 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "desc": ""
+}
+2025-09-30 06:46:33,109 - trello_api_logger - INFO - Response: {
+  "id": "68dbb50965ebec7c94e60c71",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:46:33.491Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 24,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb50965ebec7c94e60c71",
+  "pinned": false,
+  "pos": 140737488650240,
+  "shortLink": "aOJUBppK",
+  "shortUrl": "https://trello.com/c/aOJUBppK",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/aOJUBppK/24-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:46:33,109 - trello_api_logger - DEBUG - No 'id' en respuesta: <Response [200]>
+2025-09-30 06:48:03,927 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:48:03,928 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "Card de prueba",
+  "desc": ""
+}
+2025-09-30 06:48:03,928 - trello_api_logger - INFO - Response: {
+  "id": "68dbb5645c449d1decfb6723",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:48:04.408Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 26,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "Card de prueba",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb5645c449d1decfb6723",
+  "pinned": false,
+  "pos": 140737488683008,
+  "shortLink": "ndMA7hy1",
+  "shortUrl": "https://trello.com/c/ndMA7hy1",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/ndMA7hy1/26-card-de-prueba",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:48:03,928 - trello_api_logger - DEBUG - No 'id' en respuesta: <Response [200]>
+2025-09-30 06:48:04,850 - trello_api_logger - DEBUG - Card 68dbb5645c449d1decfb6723 eliminado. Response: <Response [200]>
+2025-09-30 06:48:05,772 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:48:05,772 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "desc": ""
+}
+2025-09-30 06:48:05,773 - trello_api_logger - INFO - Response: {
+  "id": "68dbb566bef0d3cca0dc1fc8",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:48:06.358Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 27,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb566bef0d3cca0dc1fc8",
+  "pinned": false,
+  "pos": 140737488683008,
+  "shortLink": "TAkhGCnq",
+  "shortUrl": "https://trello.com/c/TAkhGCnq",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/TAkhGCnq/27-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:48:05,773 - trello_api_logger - DEBUG - No 'id' en respuesta: <Response [200]>
+2025-09-30 06:50:04,865 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:50:04,865 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "Card de prueba",
+  "desc": ""
+}
+2025-09-30 06:50:04,866 - trello_api_logger - INFO - Response: {
+  "id": "68dbb5dd904e819005a6f130",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:50:05.358Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 29,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "Card de prueba",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb5dd904e819005a6f130",
+  "pinned": false,
+  "pos": 140737488355328,
+  "shortLink": "ltNc5Jkz",
+  "shortUrl": "https://trello.com/c/ltNc5Jkz",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/ltNc5Jkz/29-card-de-prueba",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:50:04,866 - trello_api_logger - DEBUG - No 'id' en respuesta: <Response [200]>
+2025-09-30 06:50:06,021 - trello_api_logger - DEBUG - Card 68dbb5dd904e819005a6f130 eliminado. Response: <Response [200]>
+2025-09-30 06:50:07,175 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:50:07,176 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "desc": ""
+}
+2025-09-30 06:50:07,176 - trello_api_logger - INFO - Response: {
+  "id": "68dbb5df80875fc2308362b1",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:50:07.789Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 30,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb5df80875fc2308362b1",
+  "pinned": false,
+  "pos": 140737488355328,
+  "shortLink": "Tk0z7uP2",
+  "shortUrl": "https://trello.com/c/Tk0z7uP2",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/Tk0z7uP2/30-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:50:07,176 - trello_api_logger - DEBUG - No 'id' en respuesta: <Response [200]>
+2025-09-30 06:53:19,942 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:53:19,943 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "Card de prueba",
+  "desc": ""
+}
+2025-09-30 06:53:19,943 - trello_api_logger - INFO - Response: {
+  "id": "68dbb6a0499856180af0aca5",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:53:20.418Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 32,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "Card de prueba",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb6a0499856180af0aca5",
+  "pinned": false,
+  "pos": 140737488355328,
+  "shortLink": "VBfSUIS3",
+  "shortUrl": "https://trello.com/c/VBfSUIS3",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/VBfSUIS3/32-card-de-prueba",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:53:19,944 - trello_api_logger - DEBUG - No 'id' en respuesta: <Response [200]>
+2025-09-30 06:53:21,177 - trello_api_logger - DEBUG - Card 68dbb6a0499856180af0aca5 eliminado. Response: <Response [200]>
+2025-09-30 06:53:21,919 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 06:53:21,919 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "desc": ""
+}
+2025-09-30 06:53:21,919 - trello_api_logger - INFO - Response: {
+  "id": "68dbb6a2c75c8a746e0d3950",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T10:53:22.513Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 33,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb6a2c75c8a746e0d3950",
+  "pinned": false,
+  "pos": 140737488355328,
+  "shortLink": "RKfGyuW5",
+  "shortUrl": "https://trello.com/c/RKfGyuW5",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/RKfGyuW5/33-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 06:53:21,920 - trello_api_logger - DEBUG - No 'id' en respuesta: <Response [200]>
+2025-09-30 07:01:42,896 - trello_api_logger - INFO - Endpoint: /cards
+2025-09-30 07:01:42,897 - trello_api_logger - INFO - Payload: {
+  "idList": "68d87bf821c29a943fd13e52",
+  "name": "Card de prueba",
+  "desc": ""
+}
+2025-09-30 07:01:42,897 - trello_api_logger - INFO - Response: {
+  "id": "68dbb89684abd042f67034f8",
+  "badges": {
+    "attachments": 0,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "checkItemsEarliestDue": null,
+    "comments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false,
+    "lastUpdatedByAi": false,
+    "start": null,
+    "externalSource": null,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "location": false,
+    "votes": 0,
+    "maliciousAttachments": 0,
+    "viewingMemberVoted": false,
+    "subscribed": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2025-09-30T11:01:42.606Z",
+  "desc": "",
+  "descData": {
+    "emoji": {}
+  },
+  "due": null,
+  "dueReminder": null,
+  "email": null,
+  "idBoard": "68d87bf821c29a943fd13def",
+  "idChecklists": [],
+  "idList": "68d87bf821c29a943fd13e52",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 35,
+  "idAttachmentCover": null,
+  "labels": [],
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "Card de prueba",
+  "nodeId": "ari:cloud:trello::card/workspace/66ff50944f353a9422148f7f/68dbb89684abd042f67034f8",
+  "pinned": false,
+  "pos": 140737488355328,
+  "shortLink": "yY4PR2L1",
+  "shortUrl": "https://trello.com/c/yY4PR2L1",
+  "start": null,
+  "subscribed": false,
+  "url": "https://trello.com/c/yY4PR2L1/35-card-de-prueba",
+  "cover": {
+    "idAttachment": null,
+    "color": null,
+    "idUploadedBackground": null,
+    "size": "normal",
+    "brightness": "dark",
+    "idPlugin": null
+  },
+  "isTemplate": false,
+  "cardRole": null,
+  "mirrorSourceId": null,
+  "attachments": [],
+  "stickers": [],
+  "limits": {}
+}
+2025-09-30 07:01:42,898 - trello_api_logger - DEBUG - No 'id' en respuesta: <Response [200]>
+2025-09-30 07:01:43,921 - trello_api_logger - DEBUG - Card 68dbb89684abd042f67034f8 eliminado. Response: <Response [200]>
+2025-09-30 07:03:04,297 - trello_api_logger - DEBUG - No se pudo crear checklist: Object of type Response is not JSON serializable
+2025-09-30 07:03:05,278 - trello_api_logger - DEBUG - No se pudo crear checklist: Object of type Response is not JSON serializable
+2025-09-30 07:03:06,358 - trello_api_logger - DEBUG - Checklist 68dbb8e96d0c772283d3e6b1 eliminado. Response: <Response [200]>

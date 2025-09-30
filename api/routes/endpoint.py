@@ -21,7 +21,7 @@ class TrelloAPI:
         params.update(self.auth_params)  # siempre agrega auth
         response = requests.request(method, url, params=params, json=json)
         response.raise_for_status()
-        return response.json()
+        return response
 
     # Métodos simplificados
     def get(self, endpoint, params=None):

@@ -17,3 +17,4 @@ auth-state.json
 
 # Extras
 .DS_Store
+__pycache__
