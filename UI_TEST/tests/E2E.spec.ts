@@ -4,7 +4,7 @@ import { DashboardPage } from "../pages/dashboardPage";
 import { BoardPage } from "../pages/boardPage";
 import { CardPage } from "../pages/cardPage";
 
-test.describe("End-to-End Workflow Tests", () => {
+test.describe("End-to-End Integration Test Suite - Complete Trello Workflow Validation", () => {
   let dashboardPage: DashboardPage;
   let boardPage: BoardPage;
   let cardPage: CardPage;
@@ -18,7 +18,7 @@ test.describe("End-to-End Workflow Tests", () => {
     await dashboardPage.deleteBoard();
   });
 
-  test('Complete card workflow - board creation, lists, card with files, date and checklist', async ({ page }) => {
+  test('TC050 - Verify complete end-to-end workflow: board creation, lists setup, card management with attachments, dates, checklists and workflow transitions', async ({ page }) => {
     test.setTimeout(180000); // 3 minutes timeout for complete E2E test
     
     const boardName = TrelloDataGenerator.generateBoardName();

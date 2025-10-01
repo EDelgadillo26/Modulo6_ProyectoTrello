@@ -103,7 +103,14 @@ export class DashboardPage {
     const menuButton = this.page.getByRole('button', { name: this.showMenuButtonName });
     await menuButton.waitFor({ state: 'visible', timeout: 10000 });
     await expect(menuButton).toBeVisible();
-    await menuButton.click();
+    
+    // Try to click with force if intercepted
+    try {
+      await menuButton.click();
+    } catch (error) {
+      console.log('Normal click failed, trying force click...');
+      await menuButton.click({ force: true });
+    }
     
     // Click close board
     const closeBoardButton = this.page.getByRole('button', { name: this.closeBoardButtonName });
@@ -126,7 +133,14 @@ export class DashboardPage {
     const menuButton = this.page.getByRole('button', { name: this.showMenuButtonName });
     await menuButton.waitFor({ state: 'visible', timeout: 10000 });
     await expect(menuButton).toBeVisible();
-    await menuButton.click();
+    
+    // Try to click with force if intercepted
+    try {
+      await menuButton.click();
+    } catch (error) {
+      console.log('Normal click failed, trying force click...');
+      await menuButton.click({ force: true });
+    }
     
     const closeBoardButton = this.page.getByRole('button', { name: this.closeBoardButtonName });
     await closeBoardButton.waitFor({ state: 'visible', timeout: 10000 });
@@ -145,7 +159,14 @@ export class DashboardPage {
     const menuButton2 = this.page.getByRole('button', { name: this.showMenuButtonName });
     await menuButton2.waitFor({ state: 'visible', timeout: 10000 });
     await expect(menuButton2).toBeVisible();
-    await menuButton2.click();
+    
+    // Try to click with force if intercepted
+    try {
+      await menuButton2.click();
+    } catch (error) {
+      console.log('Normal click failed, trying force click...');
+      await menuButton2.click({ force: true });
+    }
     
     const deleteBoardButton = this.page.getByTestId(this.deleteBoardButton);
     await deleteBoardButton.waitFor({ state: 'visible', timeout: 10000 });

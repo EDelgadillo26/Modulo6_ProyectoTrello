@@ -3,7 +3,7 @@ import { TrelloDataGenerator } from "../utils/trelloDataGenerator";
 import { DashboardPage } from "../pages/dashboardPage";
 import { CardPage } from "../pages/cardPage";
 
-test.describe("Card Functionality Tests", () => {
+test.describe("Card Advanced Features Test Suite - Attachments, Dates, Checklists and Labels", () => {
   let dashboardPage: DashboardPage;
   let cardPage: CardPage;
 
@@ -29,12 +29,12 @@ test.describe("Card Functionality Tests", () => {
     { 
       type: 'Image', 
       method: 'addCardFilesImage',
-      description: 'Add Image file to card'
+      description: 'TC006 - Verify successful image file attachment upload to card with validation'
     },
     { 
       type: 'JSON', 
       method: 'addCardFilesJson',
-      description: 'Add JSON file to card'
+      description: 'TC007 - Verify successful JSON file attachment upload to card with validation'
     }
   ];
 
@@ -60,7 +60,7 @@ test.describe("Card Functionality Tests", () => {
     });
   });
 
-  test('Add specific date to card', async ({ page }) => {
+  test('TC008 - Verify due date assignment functionality with start date and reminder configuration', async ({ page }) => {
     test.setTimeout(60000);
     
     const cardName = TrelloDataGenerator.generateCardName();
@@ -78,7 +78,7 @@ test.describe("Card Functionality Tests", () => {
     });
   });
 
-  test('Add checklist to card', async ({ page }) => {
+  test('TC009 - Verify checklist creation with multiple items and completion status functionality', async ({ page }) => {
     test.setTimeout(60000);
     
     const cardName = TrelloDataGenerator.generateCardName();
@@ -96,7 +96,7 @@ test.describe("Card Functionality Tests", () => {
     });
   });
 
-  test('Add labels to card', async ({ page }) => {
+  test('TC010 - Verify label assignment functionality and visual identification on cards', async ({ page }) => {
     test.setTimeout(60000);
     
     const cardName = TrelloDataGenerator.generateCardName();

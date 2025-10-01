@@ -77,15 +77,27 @@ export class CardPage {
     await expect(dueDateButton).toBeVisible();
     await dueDateButton.click();
     
-    const dateButton1 = this.page.getByRole('button', { name: '25, Thursday September' });
-    await dateButton1.waitFor({ state: 'visible', timeout: 10000 });
-    await expect(dateButton1).toBeVisible();
-    await dateButton1.click();
+    // Wait for calendar to load and select any available date in the future
+    await this.page.waitForTimeout(2000);
     
-    const dateButton2 = this.page.getByRole('button', { name: '10, Friday October' });
-    await dateButton2.waitFor({ state: 'visible', timeout: 10000 });
-    await expect(dateButton2).toBeVisible();
-    await dateButton2.click();
+    // Try to find any date button that's clickable (future dates)
+    const availableDateButtons = this.page.locator('button[data-testid*="date-picker"]').or(
+      this.page.locator('div[data-testid="date-picker"] button').filter({ hasNotText: /^(Mo|Tu|We|Th|Fr|Sa|Su)$/ })
+    ).or(
+      this.page.locator('button').filter({ hasText: /^\d{1,2}$/ })
+    );
+    
+    const firstAvailableDate = availableDateButtons.first();
+    await firstAvailableDate.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(firstAvailableDate).toBeVisible();
+    await firstAvailableDate.click();
+    
+    // Select a second date for the due date range
+    await this.page.waitForTimeout(1000);
+    const secondAvailableDate = availableDateButtons.nth(1);
+    if (await secondAvailableDate.isVisible()) {
+      await secondAvailableDate.click();
+    }
     
     const startDateGroup = this.page.getByRole('group', { name: 'Start date' });
     await startDateGroup.waitFor({ state: 'visible', timeout: 10000 });

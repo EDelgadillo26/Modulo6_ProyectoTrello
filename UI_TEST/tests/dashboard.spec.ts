@@ -2,7 +2,7 @@ import { test, expect} from "@playwright/test";
 import { DashboardPage } from "../pages/dashboardPage";
 import { TrelloDataGenerator } from "../utils/trelloDataGenerator";
 
-test.describe("Test Cases Dashboard", () => {
+test.describe("Dashboard Management Test Suite - Board Lifecycle Operations", () => {
     let dashboardPage: DashboardPage;
     let createdBoards: string[] = [];
 
@@ -63,7 +63,7 @@ test.describe("Test Cases Dashboard", () => {
         createdBoards = [];
     });
 
-    test('should create a new board', async ({ page }) => {
+    test('TC011 - Verify successful board creation from dashboard and visibility validation', async ({ page }) => {
         const boardName = TrelloDataGenerator.generateBoardName();
         createdBoards.push(boardName);
         
@@ -75,7 +75,7 @@ test.describe("Test Cases Dashboard", () => {
         
     });
 
-    test('should close a board', async ({ page }) => {
+    test('TC012 - Verify board closure functionality and dashboard visibility update', async ({ page }) => {
         const boardName = TrelloDataGenerator.generateBoardName();
         createdBoards.push(boardName);
         
@@ -89,7 +89,7 @@ test.describe("Test Cases Dashboard", () => {
         await dashboardPage.validateVisibilityOfBoard(boardName, false);
     });
 
-    test('should delete a board', async ({ page }) => {
+    test('TC013 - Verify complete board deletion process and removal from dashboard', async ({ page }) => {
         const boardName = TrelloDataGenerator.generateBoardName();
         createdBoards.push(boardName); // Agregamos el board a la lista por si falla
         

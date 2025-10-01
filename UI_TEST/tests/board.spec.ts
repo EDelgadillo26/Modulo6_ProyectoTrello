@@ -3,7 +3,7 @@ import { TrelloDataGenerator } from "../utils/trelloDataGenerator";
 import { DashboardPage } from "../pages/dashboardPage";
 import { BoardPage } from "../pages/boardPage";
 
-test.describe("Board Creation Tests", () => {
+test.describe("Board Management Test Suite - Creation, Modification and Navigation", () => {
   let dashboardPage: DashboardPage;
 
   test.beforeEach(async ({ page }) => {
@@ -15,7 +15,7 @@ test.describe("Board Creation Tests", () => {
     await dashboardPage.deleteBoard();
   });
 
-  test('Create board with lists and basic card', async ({ page }) => {
+  test('TC001 - Verify successful board creation with default lists and basic card functionality', async ({ page }) => {
     test.setTimeout(60000);
 
     const boardName = TrelloDataGenerator.generateBoardName();
@@ -41,7 +41,7 @@ test.describe("Board Creation Tests", () => {
     });
   });
 
-  test('Create multiple cards in different lists', async ({ page }) => {
+  test('TC002 - Verify creation of multiple cards across different board lists (To Do, In Progress, Done)', async ({ page }) => {
     test.setTimeout(60000);
 
     const boardName = TrelloDataGenerator.generateBoardName();
@@ -80,7 +80,7 @@ test.describe("Board Creation Tests", () => {
 
   });
 
-   test('Edit Name Board', async ({ page }) => {
+   test('TC003 - Verify board name modification functionality and validation', async ({ page }) => {
     test.setTimeout(60000);
 
     const boardName = TrelloDataGenerator.generateBoardName();
@@ -103,7 +103,7 @@ test.describe("Board Creation Tests", () => {
     });
   });
 
-  test('Validate that Inbox Menu is Displayed', async ({ page }) => {
+  test('TC004 - Verify inbox menu accessibility and proper display from board interface', async ({ page }) => {
       test.setTimeout(60000);
 
       const boardName = TrelloDataGenerator.generateBoardName();
@@ -126,7 +126,7 @@ test.describe("Board Creation Tests", () => {
       });
     });
 
-  test('Validate Planner Menu Display', async ({ page }) => {
+  test('TC005 - Verify planner menu accessibility and proper visualization from board interface', async ({ page }) => {
       test.setTimeout(60000);
 
       const boardName = TrelloDataGenerator.generateBoardName();

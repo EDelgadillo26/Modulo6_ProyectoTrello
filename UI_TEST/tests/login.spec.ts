@@ -25,7 +25,7 @@ const allTestUsers = [
   }
 ];
 
-test.describe('Login Tests - Todos los usuarios (users.json + app-config.json)', () => {
+test.describe('Authentication Test Suite - Comprehensive Login Validation with Valid and Invalid Credentials', () => {
 
   test.beforeAll(() => {
     validateConfig();
@@ -44,10 +44,17 @@ test.afterEach(async ({ page }, testInfo) => {
   }
 });
 
-// Inicia el TC de login
+// Test case generation for comprehensive login validation
+  let testCounter = 14; // Starting from TC014
   for (const userCase of allTestUsers) {
-    test(`${userCase.description} - ${userCase.id}`, async ({ page }) => {
+    const testId = `TC${testCounter.toString().padStart(3, '0')}`;
+    const testName = userCase.isValid 
+      ? `${testId} - Verify successful authentication with valid credentials and MFA handling`
+      : `${testId} - Verify authentication rejection with invalid credentials (${userCase.id})`;
+    
+    test(testName, async ({ page }) => {
       const loginPage = new LoginPage(page);
+      testCounter++;
       
       console.log(`🧪 Testing user: ${userCase.id}`);
       console.log(`📧 Email: "${userCase.email}"`);
